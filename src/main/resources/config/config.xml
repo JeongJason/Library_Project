@@ -3,5 +3,6 @@
 <configuration>
     <typeAliases>
         <typeAlias type="com.example.app.domain.dto.BookDTO" alias="bookDTO"></typeAlias>
+        <typeAlias type="com.example.app.domain.dto.BoardDTO" alias="boardDTO"></typeAlias>
     </typeAliases>
 </configuration>

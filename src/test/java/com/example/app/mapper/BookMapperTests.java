@@ -19,7 +19,7 @@ public class BookMapperTests {
 
     @Test
     public void selectTest(){
-        assertThat(bookMapper.select("CD0000013823").getBookTitle()).isEqualTo("Ah, music!(Ah, music!)");
+        assertThat(bookMapper.select("CD0000014918").getBookTitle()).isEqualTo("Rain(Rain)");
 
     }
 
