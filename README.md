@@ -3,13 +3,15 @@
 
 ## ▶️ 개발 동기
 
-##### 다나와싸이트를 이용하던 도중 내가 원하는 컨셉의 조립컴퓨터를 추천하는 챗봇기능이 있으면 좋겠다고 생각
-##### 기존 사용 서비스의 불편한점 or 추가할점을 강조
+##### 도서관은 지식과 정보를 찾는 핵심 장소이지만, 현재의 도서관 홈페이지와 어플리케이션은 이를 최대한 활용하지 못하고 있습니다. 이런 과제에 도전하고자, 
+##### 우리는 도서관을 더 쉽게 이용하고 활성화할 수 있는 홈페이지를 개발하기로 했습니다.-
 <br/>
 
 ## ▶️ 개발 목표
 
-##### 챗봇기능이 추가된 조립 컴퓨터 추천 쇼핑몰 싸이트 구현 
+##### 우리의 주요 목표는 기존 도서 대출 및 반납 프로세스를 온라인으로 혁신하여 이용자들이 더 편리하게 이용할 수 있도록 하는 것입니다. 
+##### 더불어, 이용자들 간의 지식 공유와 소통을 촉진하기 위한 커뮤니티 공간을 마련하여, 모든 연령대의 이용자들이 도서관 생태계에 함께 참여할 수 있도록 할 것이다.
+##### 우리의 프로젝트는 도서관을 현대화하고, 이용자들에게 더 많은 가치를 제공하며, 더 나은 환경을 만들어 나가기 위한 노력할 것이다.
 <br/>
 
 ## ▶️ 개발 일정
@@ -22,17 +24,20 @@
 
 ## ▶️ 구성인원 
 
-##### 홍길동(조장)  : BackEnd (웹 기획,API 문서정리 , BackEnd 장바구니 결제 코드 구현)
-##### 남길동(조원1) : BackEnd (상품관련 CRUD 페이지 구현)
-##### 남길동(조원2) : BackEnd (유저관련 CRUD 페이지 구현)
+### 정재원(조장) : BackEnd (웹 기획,API 문서정리 , BackEnd 도서,게시판 CRUD구현)
+
+### 이주현(조원1) : FrontEnd (FN JS, 유스케이스, 요구사항분석 구현)
+
+### 황다은(조원2) : BackEnd (대여, 회원CRUD 페이지 구현 및 FN화면 구현)
+
 <br/>
 
 ## ▶️ 개발 환경(플랫폼)
 
 ##### OS : WINDOW Server 2022 base
 ##### CPU SPEC : I7 Intel 
-##### RAM SPEC : 16GB SAMSUNG DDR4
-##### DISK SPEC : 100GB SSD 
+##### RAM SPEC : 16GB SAMSUNG DDR5
+##### DISK SPEC : 512GB SSD 
 
 <br/>
 
@@ -43,13 +48,13 @@
 
 ## ▶️ Software 목록
 
-##### IDE : IntelliJ IDEA 버전명
-##### SpringBoot 2.7.15
-##### maven version 3.1.2
+### IDE : IntelliJ IDEA 2023.2(Community Edition)
+##### SpringBoot 2.7.5
+##### Gradle version 8.2.1
 ##### Git 3.1.1
-##### Mysql Server 8.x.x
-##### Mysql Workbench 8.x.x
-##### DbWeaver x.x
+##### Mysql Server 8.0.33
+##### Mysql Workbench 8.0.33
+##### DbWeaver 23.1.5
 ##### ...
 <br/>
 
@@ -67,9 +72,9 @@
 
 ## ▶️ 사용(or 예정) API
 
-##### 원포트 결제시스템 API
-##### Openweather API
-##### OAuth2 로그인 API
+##### Chat GPT API
+##### Calendar API
+##### Map API
 
 <br/>
 
