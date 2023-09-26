@@ -99,9 +99,9 @@ https://shields.io/
 
 |END POINT|METHOD|DESCRIPTION|
 |------|---|---|
-|/board/list|GET|자유게시판 모든 게시물 목록 표시|
-|/board/post|POST|자유게시판 게시물 첨부하기|
-|/board/read|GET|자유게시판 게시물 1건 보기|
+|/book/list|GET| 모든 도서 목록 표시|
+|/book/write|POST|신규 도서 등|
+|/book/read|GET|도서 1건 보기|
 <br/>
 
 
