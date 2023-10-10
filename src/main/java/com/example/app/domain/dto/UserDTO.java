@@ -8,11 +8,12 @@ import java.util.Date;
 @Component
 @Data
 public class UserDTO {
-    private String uId;
-    private String uPw;
-    private String uName;
-    private String uEmail;
-    private String uBirth;
-    private String uRole; // admin or user
+    private String userId;
+    private String userPw;
+    private String userName;
+    private String userEmail;
+    private String userBirth;
+    private String userRole; // admin or user
+    private String userRegisterDate;
 
 }

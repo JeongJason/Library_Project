@@ -42,7 +42,7 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
         collection.add(new GrantedAuthority(){
             @Override
             public String getAuthority() {
-                return userDTO.getURole();
+                return userDTO.getUserRole();
             }
         } );
         return collection;
@@ -50,13 +50,13 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
 
     @Override
     public String getPassword() {
-        return userDTO.getUPw();
+        return userDTO.getUserPw();
     }
 
     @Override
     public String getUsername() {
         // TODO Auto-generated method stub
-        return userDTO.getUId();
+        return userDTO.getUserId();
     }
 
     @Override

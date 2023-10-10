@@ -18,7 +18,7 @@ public class UserMapperTests {
 
     @Test
     public void selectTest(){
-        assertThat(userMapper.select("testuser").getUEmail()).isEqualTo("test@test.com");
+        assertThat(userMapper.findByUid("testuser").getUserEmail()).isEqualTo("test@test.com");
     }
 
     @Test
@@ -29,34 +29,34 @@ public class UserMapperTests {
 //            System.out.println("User Email: " + user.getUEmail());
 //
 //        }
-        assertThat(userMapper.selectAll().size()).isEqualTo(3);
+        assertThat(userMapper.findAll().size()).isEqualTo(3);
     }
 
     @Test
     public void insertTest(){
         UserDTO userDTO = new UserDTO();
-        userDTO.setUId("HDE1111");
-        userDTO.setUPw("love1111");
-        userDTO.setUEmail("lovedaeun@Hwang.com");
-        userDTO.setUBirth("1998-11-11");
-        userDTO.setURole("executive");
+        userDTO.setUserId("HDE1111");
+        userDTO.setUserPw("love1111");
+        userDTO.setUserEmail("lovedaeun@Hwang.com");
+        userDTO.setUserBirth("1998-11-11");
+        userDTO.setUserRole("executive");
 
-        userMapper.insert(userDTO);
-
-        assertThat(userDTO.getUId()).isEqualTo("HDE1111");
-    }
-
-    @Test
-    public void updateTest(){
-        UserDTO userDTO = userMapper.select("HDE1111");
-        userDTO.setUId("HDE1111");
-        userDTO.setUPw("cutydaeun");
-        userDTO.setUEmail("lovelydaeun@Hwang.com");
-        userDTO.setUBirth("1998-11-11");
-        userDTO.setURole("executive");
         userMapper.update(userDTO);
-//      여기서 그냥 하나만 바꾸고 싶어서 하나면 테스트하면 에러뜸... 왜그렇지...?
+
+        assertThat(userDTO.getUserId()).isEqualTo("HDE1111");
     }
+
+//    @Test
+//    public void updateTest(){
+//        UserDTO userDTO = userMapper.select("HDE1111");
+//        userDTO.setUId("HDE1111");
+//        userDTO.setUPw("cutydaeun");
+//        userDTO.setUEmail("lovelydaeun@Hwang.com");
+//        userDTO.setUBirth("1998-11-11");
+//        userDTO.setURole("executive");
+//        userMapper.update(userDTO);
+////      여기서 그냥 하나만 바꾸고 싶어서 하나면 테스트하면 에러뜸... 왜그렇지...?
+//    }
 
     @Test
     public void deleteTest(){

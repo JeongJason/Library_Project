@@ -24,22 +24,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .authorizeRequests()
-                .antMatchers("/chk").permitAll()    // 로그인 인증이 필요없는 URI
-                .antMatchers("/user").hasAuthority("USER")
-                .antMatchers("/manage").hasAuthority("ROLE_ADMIN")
-                .anyRequest().authenticated()
-                .and()
-                .formLogin()
-                .loginPage("view/login")
-                .loginProcessingUrl("/loginProc")
-                .usernameParameter("uId")
-                .passwordParameter("uPw")
-                .defaultSuccessUrl("/", true) // 로그인후 이동하는 URI
-                .permitAll()
-                .and()
-                .logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/lgoutProc"));
+                .authorizeRequests()					// .요청 설정할게요.
+                .antMatchers("/**").permitAll();
+//                .antMatchers("/chk").permitAll()    // 로그인 인증이 필요없는 URI
+//                .antMatchers("/user").hasAuthority("USER")
+//                .antMatchers("/manage").hasAuthority("ROLE_ADMIN")
+//                .anyRequest().authenticated()
+//                .and()
+//                .formLogin()
+//                .loginPage("view/login")
+//                .loginProcessingUrl("/loginProc")
+//                .usernameParameter("uId")
+//                .passwordParameter("uPw")
+//                .defaultSuccessUrl("/", true) // 로그인후 이동하는 URI
+//                .permitAll()
+//                .and()
+//                .logout()
+//                .logoutRequestMatcher(new AntPathRequestMatcher("/lgoutProc"));
     }
     // CSS 와 IMG파일등은 인증없이 보일수있게 하기위한 메서드
     @Override

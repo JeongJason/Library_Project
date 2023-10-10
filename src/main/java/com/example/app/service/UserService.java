@@ -22,8 +22,8 @@ public class UserService {
     }
 
     // 회원 조회
-    public UserDTO getUser(String uId) {
-        return userMapper.findByUid(uId);
+    public UserDTO getUser(String userId) {
+        return userMapper.findByUid(userId);
     }
 
     // 회원 목록 조회
@@ -38,8 +38,8 @@ public class UserService {
     // 회원 등록
     public void write(UserDTO userDTO) {
         // 비밀번호 암호화
-        String encodedPassword = passwordEncoder.encode(userDTO.getUPw());
-        userDTO.setUPw(encodedPassword);
+        String encodedPassword = passwordEncoder.encode(userDTO.getUserPw());
+        userDTO.setUserPw(encodedPassword);
         userMapper.register(userDTO);
     }
 

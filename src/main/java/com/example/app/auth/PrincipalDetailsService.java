@@ -18,12 +18,12 @@ public class PrincipalDetailsService implements UserDetailsService {
     private final UserMapper userMapper;
 
     @Override
-    public UserDetails loadUserByUsername(String uId) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
 
-        UserDTO userDTO = userMapper.select(uId);
+        UserDTO userDTO = userMapper.findByUid(userId);
 
         if (userDTO == null) {
-            throw new UsernameNotFoundException("해당 사용자를 찾을 수 없습니다: " + uId);
+            throw new UsernameNotFoundException("해당 사용자를 찾을 수 없습니다: " + userId);
         }
 
         // PrincipalDetails 클래스의 생성자를 UserDTO를 받도록 수정

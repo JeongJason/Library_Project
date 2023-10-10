@@ -24,8 +24,8 @@ public class LoginIdPwValidator implements UserDetailsService {
         if(userDTO == null){
             return null;
         }
-        String pw = userDTO.getUPw();
-        String roles = userDTO.getURole();
+        String pw = userDTO.getUserPw();
+        String roles = userDTO.getUserRole();
         return User.builder()
                 .username(insertedId)
                 .password(pw)

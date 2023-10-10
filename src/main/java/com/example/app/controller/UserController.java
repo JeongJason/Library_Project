@@ -1,12 +1,12 @@
 package com.example.app.controller;
 
+import com.example.app.auth.PrincipalDetails;
 import com.example.app.domain.dto.BookDTO;
 import com.example.app.domain.dto.UserDTO;
 import com.example.app.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
@@ -40,17 +40,17 @@ public class UserController {
     @PostMapping("/register")
     public RedirectView register(UserDTO userDTO, RedirectAttributes redirectAttributes){
         userService.write(userDTO);
-        redirectAttributes.addFlashAttribute("uId", userDTO.getUId());
+        redirectAttributes.addFlashAttribute("uId", userDTO.getUserId());
 //        추가후 새로고침을해도 redirect로 인해 list로 가더라도 계속 추가되지않는다.
         return new RedirectView("/user/registerSuccess");
     }
 
     @PostMapping("/modify")
     public RedirectView modify(Principal principal,RedirectAttributes redirectAttributes, UserDTO userDTO){
-        String userId = principal.getName();
-        userDTO.setUId(userId);
+        PrincipalDetails principalDetails = (PrincipalDetails)principal;
+        principalDetails.setUserDTO(userDTO);
         userService.modify(userDTO);
-        redirectAttributes.addAttribute("uId", userDTO.getUId());
+        redirectAttributes.addAttribute("userId", userDTO.getUserId());
         return new RedirectView("/user/read");
     }
 
