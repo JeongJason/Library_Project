@@ -9,8 +9,8 @@
     </select>
 
     <insert id="insert">
-        INSERT INTO TBL_ANNOUNCEMENT(AN_TITLE, USER_ID, AN_CONTENT,AN_REGISTER_DATE,AN_UPDATE_DATE)
-        VALUE(#{anTitle}, #{userId}, #{anContent}, NOW(),NOW());
+        insert into tbl_announcement(an_title,user_id,an_content,an_register_date, an_update_date)
+        value(#{anTitle}, #{userId}, #{anContent},now(),now());
     </insert>
 
     <delete id="delete">
@@ -19,8 +19,8 @@
 
     <update id="update">
         UPDATE TBL_ANNOUNCEMENT
-        SET AN_TITLE = #{anTitle}, AN_CONTENT = #{anContent}, AN_UPDATE_DATE = NOW()
-        WHERE AN_ID = #{anId}
+        SET an_title = #{anTitle}, an_content=#{anContent}, an_update_date = now()
+        WHERE an_id = #{anId}
     </update>
 
 </mapper>

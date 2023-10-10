@@ -12,23 +12,23 @@ import java.util.List;
 public class BoardDAO {
     private final BoardMapper boardMapper;
 
-    //    게시글 조회
-    public BoardDTO findById(int anId){
+    // 게시글 조회
+    public BoardDTO findbyId(int anId){
         return boardMapper.select(anId);
     }
-    //    게시글 목록
+    // 게시글 목록
     public List<BoardDTO> findAll(){
         return boardMapper.selectAll();
     }
-    //    게시글 추가
+    // 게시글 추가
     public void save(BoardDTO boardDTO){
         boardMapper.insert(boardDTO);
     }
-    //    게시글 삭제
+    // 게시글 삭제
     public void delete(int anId){
         boardMapper.delete(anId);
     }
-    //    게시글 수정
+    // 게시글 수정
     public void setBoard(BoardDTO boardDTO){
         boardMapper.update(boardDTO);
     }

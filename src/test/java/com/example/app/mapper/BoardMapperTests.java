@@ -1,7 +1,6 @@
 package com.example.app.mapper;
 
 import com.example.app.domain.dto.BoardDTO;
-import com.example.app.domain.dto.BookDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,27 +26,26 @@ public class BoardMapperTests {
 
     @Test
     public void insertTest(){
-        BoardDTO boardDTO = new BoardDTO();
-        boardDTO.setAnTitle("정재원");
-        boardDTO.setUserId("Jason");
-        boardDTO.setAnContent("황대은 돼지");
-        boardMapper.insert(boardDTO);
+        BoardDTO boardDto = new BoardDTO();
+        boardDto.setAnTitle("황다은");
+        boardDto.setUserId("HDE1234");
+        boardDto.setAnContent("정재원 돼지");
+        boardMapper.insert(boardDto);
 
-        assertThat(boardDTO.getAnTitle()).isEqualTo("정재원");
+        assertThat(boardDto.getAnTitle()).isEqualTo("황다은")  ;
     }
 
     @Test
     public void updateTest(){
         BoardDTO boardDTO = boardMapper.select(4);
-        boardDTO.setAnTitle("황댜은");
+        boardDTO.setAnTitle("정재워니");
+        boardDTO.setAnContent("하기싫으다..");
         boardMapper.update(boardDTO);
-
     }
 
     @Test
     public void deleteTest(){
         boardMapper.delete(4);
     }
-
 
 }
