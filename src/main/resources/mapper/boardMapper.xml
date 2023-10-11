@@ -4,9 +4,31 @@
     <select id="select" resultType="boardDTO">
         SELECT * FROM TBL_ANNOUNCEMENT WHERE AN_ID = #{anId}
     </select>
-    <select id="selectAll" resultType="boardDTO">
-        SELECT * FROM TBL_ANNOUNCEMENT
+
+
+    <select id="selectAll" resultType="boardDTO" >
+        SELECT * FROM TBL_ANNOUNCEMENT ORDER BY AN_ID DESC LIMIT #{skip}, #{amount}
     </select>
+
+
+    <select id="selectCountAll" resultType="Long">
+        SELECT COUNT(AN_ID) FROM TBL_ANNOUNCEMENT
+    </select>
+
+<!--    <select id="selectAll" resultType="boardDTO">
+        SELECT *
+        FROM (
+        SELECT @rownum := @rownum + 1 AS R, AN_ID, AN_TITLE, USER_ID, AN_CONTENT, AN_REGISTER_DATE, AN_UPDATE_DATE
+        FROM (
+        SELECT *
+        FROM TBL_ANNOUNCEMENT
+        <include refid="search"/>
+        ORDER BY AN_ID DESC
+        ) B, (SELECT @rownum := 0) r
+        ) numbered
+        WHERE numbered.R <= #{cri.page} * #{cri.rowCount}
+        AND numbered.R > (#{cri.page} - 1) * #{cri.rowCount}
+    </select>-->
 
     <insert id="insert">
         insert into tbl_announcement(an_title,user_id,an_content,an_register_date, an_update_date)

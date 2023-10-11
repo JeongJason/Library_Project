@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/basic.css">
+    <link rel="stylesheet" href="/css/sub_header.css">
+    <link rel="stylesheet" href="/css/sub_main.css">
+    <link rel="stylesheet" href="/css/notice.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header_wrap">
+      <div class="header_top">
+        <div class="ht_info">
+          <div class="tnb_menu">
+            <a href="../login.html">로그인</a>
+            <a href="../signup.html">회원가입</a>
+          </div>
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="hb_info">
+          <div class="gnb">
+            <a href="../main.html"><img class="BeomeoLogoB1" src=" /img/beomeo_logo_b.png"></a>
+            <ul class="gnb_menu">
+              <li><a href="../1-1search.html">자료검색</a></li>
+              <li><a href="../2-1lend.html">대여안내</a></li>
+              <li><a href="notice.html">열린공간</a></li>
+              <li><a href="../4-1greetings.html">도서관 소개</a></li>
+              <li><a href="../5-1myInfo.html">나의 도서관</a></li>
+              <li><a href=""><img src=" /img/menubar.png" style="width: 35px; height: 35px; padding-top: 3px;" alt="메뉴바"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="main_wrap">
+      <div class="main_top">
+        <div class="mt_index">
+          <h1>공지사항</h1>
+        </div>
+        <div class="mt_index2">
+          <ul>
+            <li class="home"><a href=""><img src=" /img/navi_home_icon.gif" alt="Home"></a></li>
+            <li><a href="notice.html">열린공간</a></li>
+            <li>공지사항</li>
+          </ul>
+        </div>
+        <div class="mt_info">
+          <ul class="mt_menu">
+            <li class="mt_m" style="background-color: rgb(42, 178, 196);"><a href="notice.html" style="color: white">공지사항</a></li>
+            <li class="mt_m"><a href="../3-2review.html">도서리뷰</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="main_bottom">
+        <div class="mb_info">
+          <div class="table_header">
+            <div>
+              전체 <span th:text="${totalPostCount}"></span> 건
+            </div>
+            <form name="listForm" action="">
+              <span class="bunch">
+                <select name="sFld" id="sFld">
+                  <option value="0">전체</option>
+                  <option value="1">제목</option>
+                  <option value="2">내용</option>
+                  <input type="text" name="sStr" id="sStr" title="검색어를 입력해주세요" placeholder="검색어를 입력해주세요">
+                </select>
+              </span>
+              <span class="bunch">
+                <button type="submit" class="btn_search">검색</button>
+              </span>   
+              <span class="bunch">
+                <div class="btn_write">
+                <a href="../3-3write.html" style="color: white; font-size: 13px;" >글쓰기</a>
+                </div>
+              </span>  
+            </form>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th class="ano">번호</th>
+                <th class="tdt">제목</th>
+                <th class="writer">글쓴이</th>
+                <th class="views">조회수</th>
+                <th class="regDate">날짜</th>
+              </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="list:${list}">
+              <tr th:object="${list}">
+                <td class="ano" th:text="*{anId}"></td>
+                <td class="tdt" >
+                  <div>
+                    <a href="" th:text="${list.anTitle} ">s</a>
+                  </div>
+                </td>
+                <td th:text="${list.userId}"></td>
+                <td>1</td>
+                <td th:text="${list.anRegisterDate}"></td>
+              </tr>
+            </th:block>
+            </tbody>
+          </table>
+          <div class ="pageInfo_wrap">
+            <div class="pageInfo_area">
+              <ul id="pageInfo" class="pageInfo">
+                <!-- 이전페이지 버튼 -->
+                <li class="pageInfo_btn previous" th:if="${pageMaker.prev}">
+                  <a class="paginate_button" th:href="@{notice(pageNum=${pageMaker.startPage-1}, amount=${pageMaker.criteria.amount})}">Prev</a>
+                </li>
+
+                <!-- 페이지 번호 버튼 -->
+                <li th:each="num : ${#numbers.sequence(pageMaker.startPage, pageMaker.endPage)}"
+                    class="pageInfo_btn" th:classappend="${num == pageMaker.criteria.pageNum} ? 'active' : ''">
+                  <a class="paginate_button" th:href="@{notice(pageNum=${num}, amount=${pageMaker.criteria.amount})}" th:text="${num}"></a>
+                </li>
+
+                <!-- 다음페이지 버튼 -->
+                <li class="pageInfo_btn next" th:if="${pageMaker.next}">
+                  <a class="paginate_button" th:href="@{notice(pageNum=${pageMaker.endPage + 1}, amount=${pageMaker.criteria.amount})}">Next</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <form id="moveForm" method="get">
+            <!-- pageNum 값을 숫자로 변환하여 대체 -->
+            <input type="hidden" name="pageNum" th:attr="value=${pageMaker.criteria.pageNum}">
+            <!-- amount 값을 숫자로 변환하여 대체 -->
+            <input type="hidden" name="amount" th:attr="value=${pageMaker.criteria.amount}">
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer class="footer_wrap">
+      <div class="footer_top">
+        <div class="ft_info">
+          <div class="ft_menu">
+            <div ><a href="">개인정보처리방침</a></div>
+            <div ><a href="">영상정보처리방침</a></div>
+            <div ><a href="">이용약관</a></div>
+            <div ><a href="">도서관서비스헌장</a></div>
+            <div ><a href="">저작권보호정책</a></div>
+            <div ><a href="">뷰어다운로드</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <div class="fb_info">
+          <p> 대구 수성구 달구벌대로 2451 (범어동, 범어도서관) 전화 053-668-1600 팩스 053-668-1609<br/>Copyright ⓒ 수성구립 범어도서관. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.dropotron.min.js"></script>
+<script src="/js/browser.min.js"></script>
+<script src="/js/breakpoints.min.js"></script>
+<script src="/js/util.js"></script>
+<script src="/js/main.js"></script>
+<script>
+  $(document).ready(function(){
+      var moveForm = $("#moveForm");
+
+      $(".move").on("click", function(e){
+          e.preventDefault();
+
+          moveForm.append("<input type='hidden' name='anId' value='"+ $(this).attr("href")+"'>");
+          moveForm.attr("action", "/main");
+          moveForm.submit();
+      });
+
+      $(".pageInfo_area a").on("click", function(e){
+          e.preventDefault();
+
+          var pageNum = parseInt($(this).text();
+
+          if(!isNaN(pageNum)){
+              $("input[name='pageNum']").val(pageNum);
+              $("#moveForm").attr("action", "/notice");
+              $("#moveForm").submit();
+          }
+      });
+  });
+
+
+</script>
+</html>

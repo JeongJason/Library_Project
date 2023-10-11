@@ -28,7 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/**").permitAll();
 //                .antMatchers("/chk").permitAll()    // 로그인 인증이 필요없는 URI
 //                .antMatchers("/user").hasAuthority("USER")
-//                .antMatchers("/manage").hasAuthority("ROLE_ADMIN")
+//                .antMatchers("/manage").hasAuthority("ADMIN")
 //                .anyRequest().authenticated()
 //                .and()
 //                .formLogin()
