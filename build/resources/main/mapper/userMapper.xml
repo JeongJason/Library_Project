@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.app.mapper.UserMapper">
+    <select id="select" resultType="userDTO">
+        SELECT * FROM TBL_USER WHERE U_ID=#{uId}
+    </select>
+
+    <select id="selectAll" resultType="userDTO">
+        SELECT * FROM TBL_USER
+    </select>
+
+    <insert id="insert">
+        INSERT INTO TBL_USER(U_ID,U_PW,U_EMAIL,U_BIRTHDAY,U_ROLE, U_REGISTER_DATE)
+        VALUES(#{uId}, #{uPw}, #{uName}, #{uEmail}, #{uBirth}, #{uRole}, NOW())
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM TBL_USER WHERE U_ID=#{uId}
+    </delete>
+
+    <update id="update">
+        UPDATE TBL_USER
+        SET U_PW = #{uPw}, U_EMAIL = #{uEmail}
+        WHERE U_ID = #{uId}
+    </update>
+</mapper>
