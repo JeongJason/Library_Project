@@ -1,6 +1,7 @@
 package com.example.app.mapper;
 
 import com.example.app.domain.dto.BoardDTO;
+import com.example.app.domain.paging.Criteria;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,8 @@ public class BoardMapperTests {
 
     @Test
     public void selectAllTest(){
-        assertThat(boardMapper.selectAll().size()).isEqualTo(3);
+        Criteria criteria = new Criteria();
+        assertThat(boardMapper.selectAll(criteria).size()).isEqualTo(3);
     }
 
     @Test

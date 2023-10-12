@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/basic.css">
+    <link rel="stylesheet" href="/css/sub_header.css">
+    <link rel="stylesheet" href="/css/sub_main.css">
+    <link rel="stylesheet" href="/css/notice.css">
+    <link rel="stylesheet" href="/css/lend_body.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header_wrap">
+      <div class="header_top">
+        <div class="ht_info">
+          <div class="tnb_menu">
+            <a href="./login.html">로그인</a>
+            <a href="./signup.html">회원가입</a>
+          </div>
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="hb_info">
+          <div class="gnb">
+            <a href="./main.html"><img class="BeomeoLogoB1" src=" /img/beomeo_logo_b.png"></a>
+            <ul class="gnb_menu">
+              <li><a href="./1-1search.html">자료검색</a></li>
+              <li><a href="./2-1lend.html">대여안내</a></li>
+              <li><a href="boards/notice.html">열린공간</a></li>
+              <li><a href="./4-1greetings.html">도서관 소개</a></li>
+              <li><a href="./5-1myInfo.html">나의 도서관</a></li>
+              <li><a href=""><img src=" /img/menubar.png" style="width: 35px; height: 35px; padding-top: 3px;" alt="메뉴바"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="main_wrap">
+      <div class="main_top">
+        <div class="mt_index">
+          <h1>도서반납</h1>
+        </div>
+        <div class="mt_index2">
+          <ul>
+            <li class="home"><a href=""><img src=" /img/navi_home_icon.gif" alt="Home"></a></li>
+            <li><a href="./2-1lend.html">대여안내</a></li>
+            <li>도서반납</li>
+          </ul>
+        </div>
+        <div class="mt_info">
+          <ul class="mt_menu">
+            <li class="mt_m"><a href="./2-1lend.html">도서대출</a></li>
+            <li class="mt_m" style="background-color: rgb(42, 178, 196);"><a href="./2-2return.html" style="color: white">도서반납</a></li>
+            <li class="mt_m"><a href="./2-3reserve.html">도서예약</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="main_bottom">
+        <div class="mb_info">
+          <div class="content">
+            <div class="doc">
+                <div class="doc-body con35" id="contentArea">
+                    <div class="body">
+                        <div class="lend_search">
+                            <table class="lend_tbl">
+                                <caption style="margin-bottom: 20px;">
+                                    <h2>나의 대여리스트</h2>
+                                </caption>
+                                <tr>
+                                    <th></th>
+                                    <th>책 이름</th>
+                                    <th>ISBN</th>
+                                    <th>저자</th>
+                                    <th>대여일</th>
+                                    <th>반납일</th>
+                                    <th>연체료</th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <th>1</th>
+                                    <th>-</th>
+                                    <th>-</th>
+                                    <th>-</th>
+                                    <th>-</th>
+                                    <th>-</th>
+                                    <th>-</th>
+                                    <th><input type="radio"></th>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <th>-</th>
+                                    <th>-</th>
+                                    <th>-</th>
+                                    <th>-</th>
+                                    <th>-</th>
+                                    <th>-</th>
+                                    <th><input type="radio"></th>
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <th>-</th>
+                                    <th>-</th>
+                                    <th>-</th>
+                                    <th>-</th>
+                                    <th>-</th>
+                                    <th>-</th>
+                                    <th><input type="radio"></th>
+                                </tr>
+                            </table>
+                            <div class="btngroup">
+                                <button type="button" class="btn1">반납</button>
+                                <button type="button" class="btn2">연장</button>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="doc-body">
+                            <h3>반납안내</h3>
+                            <ul class="con2">
+                                <li>도서의 반납은 도서를 빌리신 자료실에 반납하시면 되며, 범어도서관 도서의 경우 1층 정문 및 어린이실 입구에 있는 무인도서반납기를
+                                    통한
+                                    24시간 반납이 가능합니다. </li>
+                            </ul>
+                            <h3>대출연장안내</h3>
+                            <ul class="con2">
+                                <li>도서 대출 연장의 경우 1회에 한해서 연장이 가능합니다.</li>
+                                <li>대출연장 일수 : 5일</li>
+                            </ul>
+                            <h3>대출기간</h3>
+                            <ul class="con2">
+                                <li>일반회원 : 15일</li>
+                                <li>장애인 등록회원 : 30일</li>
+                                <li>노인회원(만65세이상) : 30일</li>
+                                <li>자료 연장 불가</li>
+                                <li>재대출의 경우는 도서 반납일로부터 5일 경과 후 가능 (가족회원으로 묶여있을 경우 동일)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer_wrap">
+      <div class="footer_top">
+        <div class="ft_info">
+          <div class="ft_menu">
+            <div ><a href="">개인정보처리방침</a></div>
+            <div ><a href="">영상정보처리방침</a></div>
+            <div ><a href="">이용약관</a></div>
+            <div ><a href="">도서관서비스헌장</a></div>
+            <div ><a href="">저작권보호정책</a></div>
+            <div ><a href="">뷰어다운로드</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <div class="fb_info">
+          <p> 대구 수성구 달구벌대로 2451 (범어동, 범어도서관) 전화 053-668-1600 팩스 053-668-1609<br/>Copyright ⓒ 수성구립 범어도서관. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

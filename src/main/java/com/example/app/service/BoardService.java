@@ -1,8 +1,8 @@
 package com.example.app.service;
 
-import com.example.app.domain.dao.BoardDAO;
 import com.example.app.domain.dto.BoardDTO;
-import lombok.AllArgsConstructor;
+import com.example.app.domain.paging.Criteria;
+import com.example.app.mapper.BoardMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,26 +11,32 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class BoardService {
-    private final BoardDAO boardDAO;
+
+    private final BoardMapper boardmapper;
 
     // 게시글 조회
     public BoardDTO getBoard(int anId){
-        return boardDAO.findbyId(anId);
+        return boardmapper.select(anId);
     }
     // 게시글 목록
-    public List<BoardDTO> getList(){
-        return boardDAO.findAll();
+    public List<BoardDTO> getList(Criteria criteria){
+        return boardmapper.selectAll(criteria);
     }
     // 게시글 추가
     public void write(BoardDTO boardDTO){
-        boardDAO.save(boardDTO);
+        boardmapper.insert(boardDTO);
     }
     // 게시글 삭제
     public void delete(int anId){
-        boardDAO.delete(anId);
+        boardmapper.delete(anId);
     }
     // 게시글 수정
     public void modify(BoardDTO boardDTO){
-        boardDAO.setBoard(boardDTO);
+        boardmapper.update(boardDTO);
+    }
+
+    //    게시글 전체 개수 조회
+    public Long getTotal(){
+        return boardmapper.selectCountAll();
     }
 }
