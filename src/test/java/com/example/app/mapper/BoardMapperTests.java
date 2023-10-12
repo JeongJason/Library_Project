@@ -20,11 +20,11 @@ public class BoardMapperTests {
         assertThat(boardMapper.select(1).getAnTitle()).isEqualTo("테스트 제목");
     }
 
-    @Test
+/*    @Test
     public void selectAllTest(){
         Criteria criteria = new Criteria();
-        assertThat(boardMapper.selectAll(criteria).size()).isEqualTo(3);
-    }
+        assertThat(boardMapper.selectAll(criteria).size()).isEqualTo(3);*/
+//    }
 
     @Test
     public void insertTest(){

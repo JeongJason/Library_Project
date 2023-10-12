@@ -31,10 +31,10 @@ public class UserController {
         return userService.getUser(principal.getName());
     }
 
-//    회원가입 창으로 이동
+    //    회원가입 창으로 이동
     @GetMapping("/register.do")
     public String registerForm(){
-       return "/register";
+        return "/register";
     }
 
     @PostMapping("/register")
@@ -61,7 +61,7 @@ public class UserController {
         return new RedirectView("/main");
     }
 
-//    로그인 창으로 이동
+    //    로그인 창으로 이동
     @GetMapping("/login.do")
     public String loginForm(){
         return "/login";

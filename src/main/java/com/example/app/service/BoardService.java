@@ -1,6 +1,7 @@
 package com.example.app.service;
 
 import com.example.app.domain.dto.BoardDTO;
+import com.example.app.domain.dto.Search;
 import com.example.app.domain.paging.Criteria;
 import com.example.app.mapper.BoardMapper;
 import lombok.RequiredArgsConstructor;
@@ -19,8 +20,8 @@ public class BoardService {
         return boardmapper.select(anId);
     }
     // 게시글 목록
-    public List<BoardDTO> getList(Criteria criteria){
-        return boardmapper.selectAll(criteria);
+    public List<BoardDTO> getList(Criteria criteria, Search search){
+        return boardmapper.selectAll(criteria, search);
     }
     // 게시글 추가
     public void write(BoardDTO boardDTO){
@@ -36,7 +37,7 @@ public class BoardService {
     }
 
     //    게시글 전체 개수 조회
-    public Long getTotal(){
-        return boardmapper.selectCountAll();
+    public Long getTotal(Search search){
+        return boardmapper.selectCountAll(search);
     }
 }

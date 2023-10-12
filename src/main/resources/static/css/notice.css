@@ -171,19 +171,36 @@ tr{
 }
 
 /* 페이징 */
-.dataTables_paginate{
+.pageInfo_wrap {
+    height: 100px;
+    padding-top: 30px;
+}/*
+.pageInfo_area{
     height: 90px;
-    /* border: 1px solid black; */
+     border: 1px solid black;
     overflow:hidden;
     text-align:center;
     font-size:0;
     line-height: 105px;
+}*/
+ul#pageInfo{
+    display: flex;
+    justify-content: center;
 }
-.dataTables_paginate a.paginate_button{
+li.pageInfo_btn{
     cursor:pointer;
     display:inline-block;
     zoom:1.2;
     display:inline;
     line-height:24px;
     padding:3px 12px;
-    -webkit-transition:all 120ms ease;-moz-transition:all 120ms ease;-ms-transition:all 120ms ease;-o-transition:all 120ms ease;transition:all 120ms ease;font-size:13px;border:1px solid #d9d9d9;background:#fafafa;margin-left:-1px;color:#555;-moz-background-clip:padding-box;-webkit-background-clip:padding-box;background-clip:padding-box}
+    -webkit-transition:all 120ms ease;
+    -moz-transition:all 120ms ease;
+    -ms-transition:all 120ms ease;
+    -o-transition:all 120ms ease;
+    transition:all 120ms ease;
+    font-size:13px;
+    border:1px solid #d9d9d9;
+    background:#fafafa;margin-left:-1px;color:#555;-moz-background-clip:padding-box;-webkit-background-clip:padding-box;background-clip:padding-box}
+
+

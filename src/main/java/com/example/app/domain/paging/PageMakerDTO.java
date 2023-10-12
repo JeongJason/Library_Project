@@ -16,6 +16,7 @@ public class PageMakerDTO {
     //현재 페이지, 페이지 당 게시물 표시수 정보
     private Criteria criteria;
 
+
     public PageMakerDTO(Criteria criteria, Long total){
         this.criteria = criteria;
         this.total = total;
