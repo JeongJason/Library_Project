@@ -28,18 +28,18 @@ public class BookController {
      */
 
 
-//    도서 목록
+    //    도서 목록
     @GetMapping("list")
     public void showList(Model model){
         model.addAttribute("book", bookService.getList());
     }
 
-//    도서 조회
+    //    도서 조회
     @GetMapping(value={"read","modify"})
     public void getBook(String isbn, Model model){
         model.addAttribute(bookService.getBook(isbn));
     }
-//    도서 추가
+    //    도서 추가
     @PostMapping("write")
     public RedirectView write(BookDTO bookDTO, RedirectAttributes redirectAttributes){
         bookService.write(bookDTO);
@@ -47,13 +47,13 @@ public class BookController {
 //        추가후 새로고침을해도 redirect로 인해 list로 가더라도 계속 추가되지않는다.
         return new RedirectView("/book/list");
     }
-//    도서 삭제
+    //    도서 삭제
     @GetMapping("remove")
     public RedirectView remove(String isbn){
         bookService.remove(isbn);
         return new RedirectView("/book/list");
     }
-//    도서 수정
+    //    도서 수정
     @PostMapping("modify")
     public RedirectView modify(BookDTO bookDTO, RedirectAttributes redirectAttributes){
         bookService.modify(bookDTO);
