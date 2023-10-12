@@ -1,6 +1,7 @@
 package com.example.app.controller;
 
 import com.example.app.domain.dto.BoardDTO;
+import com.example.app.domain.dto.Search;
 import com.example.app.domain.paging.Criteria;
 import com.example.app.domain.paging.PageMakerDTO;
 import com.example.app.service.BoardService;
@@ -29,12 +30,12 @@ public class BoardController {
 
     // 게시글 목록
     @GetMapping("/notice")
-    public void showList(Criteria criteria,Model model){
-        model.addAttribute("list", boardService.getList(criteria));
-        Long total = boardService.getTotal();
+    public void showList(Search search ,Criteria criteria, Model model){
+        model.addAttribute("list", boardService.getList(criteria, search));
+        Long total = boardService.getTotal(search);
         PageMakerDTO pageMaker = new PageMakerDTO(criteria, total);
 
-        Long totalPostCount = boardService.getTotal();
+        Long totalPostCount = boardService.getTotal(search);
         model.addAttribute("totalPostCount", totalPostCount);
         model.addAttribute("pageMaker", pageMaker);
     }

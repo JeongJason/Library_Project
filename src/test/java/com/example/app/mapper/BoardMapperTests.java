@@ -1,6 +1,7 @@
 package com.example.app.mapper;
 
 import com.example.app.domain.dto.BoardDTO;
+import com.example.app.domain.dto.Search;
 import com.example.app.domain.paging.Criteria;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -23,7 +24,8 @@ public class BoardMapperTests {
     @Test
     public void selectAllTest(){
         Criteria criteria = new Criteria();
-        assertThat(boardMapper.selectAll(criteria).size()).isEqualTo(3);
+        Search search = new Search();
+        assertThat(boardMapper.selectAll(criteria, search).size()).isEqualTo(3);
     }
 
     @Test
