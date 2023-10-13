@@ -101,7 +101,7 @@
                 <td class="ano" th:text="*{anId}"></td>
                 <td class="tdt" >
                   <div>
-                    <a href="" th:text="${list.anTitle} ">s</a>
+                    <a th:href="@{3-4post(anId=*{anId}, pageNum=${pageMaker.criteria.pageNum}, amount=${pageMaker.criteria.amount}, type=${search.type}, keyword=${search.keyword})}" th:text="${list.anTitle} ">s</a>
                   </div>
                 </td>
                 <td th:text="${list.userId}"></td>

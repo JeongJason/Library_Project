@@ -17,7 +17,7 @@ public class BoardMapperTests {
 
     @Test
     public void selectTest(){
-        assertThat(boardMapper.select(1).getAnTitle()).isEqualTo("테스트 제목");
+        assertThat(boardMapper.select(1L).getAnTitle()).isEqualTo("테스트 제목");
     }
 
 /*    @Test
@@ -39,7 +39,7 @@ public class BoardMapperTests {
 
     @Test
     public void updateTest(){
-        BoardDTO boardDTO = boardMapper.select(4);
+        BoardDTO boardDTO = boardMapper.select(4L);
         boardDTO.setAnTitle("정재워니");
         boardDTO.setAnContent("하기싫으다..");
         boardMapper.update(boardDTO);

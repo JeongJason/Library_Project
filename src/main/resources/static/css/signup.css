@@ -15,7 +15,7 @@
     background: #FFFFFF;
     border-radius: 0.5rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    margin: 0px;
+    margin:0px;
     padding: 0px 100px 0px 100px;
     box-sizing: border-box;
     display: flex;
@@ -52,20 +52,68 @@
     text-align: center;
 }
 
-#signup_info {
+#signup_info, .signup_id{
     padding: 0px;
     border: none;
     border-bottom: 1px solid #CFCFCF;
-    width: 466px;
+    width: 470px;
     height: 30px;
 }
-#signup_email{
+
+/* .signup_id{
     padding: 0px;
     border: none;
     border-bottom: 1px solid #CFCFCF;
-    width: 170px;
+    width: 375px;
+    height: 30px;
+} */
+
+/* 아이디 중복 확인 버튼 */
+/* #checkAvailabilityButton{
+    width: 85px;
+    height: 30px;
+} */
+
+/* 떨리는 효과를 정의하는 CSS 애니메이션 */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+/* 떨리는 효과를 적용할 클래스 */
+.shake , .error-message {
+    animation: shake 0.2s;
+  }
+
+.signup_pwd, .signup_pwd-confirm{
+    padding: 0px;
+    border: none;
+    border-bottom: 1px solid #CFCFCF;
+    width: 435px;
     height: 30px;
 }
+
+#signup_email, #signup_email_prefix{
+    padding: 0px;
+    border: none;
+    border-bottom: 1px solid #CFCFCF;
+    width: 165px;
+    height: 30px;
+    text-align: center;
+}
+
+#email_domain{
+    width: 100px; 
+    height: 30px;
+}
+
 #signup_age{
     padding: 0px;
     border: none;
@@ -75,7 +123,22 @@
 }
 
 .signup_info_form {
+    /* 아이디, 비밀번호, 이름, 생년월일, 이메일, 회원유형 글씨 색상 */
     color: lightgrey;
+    margin: 0px 0px 15px 0px;
+}
+
+.signup_info_form2{
+    display: flex;
+    justify-content: center
+    ;
+}
+.signup_domain_form{
+    margin-left: 10px;
+}
+
+#email_domain{
+    text-align: center;
 }
 
 .radio {
@@ -92,3 +155,20 @@ input.agree {
     width: 15px;
     height: 15px;
 }
+
+.birth_form{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+
+}
+
+
+#signup_year, #signup_month, #signup_day{
+    width: 90px;
+    height: 30px;
+    margin: 0 auto;
+    font-size: 15px;
+    text-align: center;
+}
+

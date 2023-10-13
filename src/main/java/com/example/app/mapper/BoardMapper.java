@@ -12,7 +12,7 @@ import java.util.List;
 public interface BoardMapper {
 
     // 게시글 조회
-    public BoardDTO select(int anId);
+    public BoardDTO select(Long anId);
     // 게시글 목록
     public List<BoardDTO> selectAll(@Param("cri")Criteria criteria, @Param("search")Search search);
     // 게시글 추가

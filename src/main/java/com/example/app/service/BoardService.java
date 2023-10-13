@@ -16,7 +16,7 @@ public class BoardService {
     private final BoardMapper boardmapper;
 
     // 게시글 조회
-    public BoardDTO getBoard(int anId){
+    public BoardDTO getBoard(Long anId){
         return boardmapper.select(anId);
     }
     // 게시글 목록

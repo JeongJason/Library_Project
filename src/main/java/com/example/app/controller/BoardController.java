@@ -24,8 +24,9 @@ public class BoardController {
     private final BoardService boardService;
 
     // 게시글 조회
-    public BoardDTO getBoard(int anId){
-        return boardService.getBoard(anId);
+    @GetMapping(value={"/3-4post","/modify"})
+    public void getBoard(Search search, Criteria criteria, Long anId, Model model) {
+        model.addAttribute(boardService.getBoard(anId));
     }
 
     // 게시글 목록
