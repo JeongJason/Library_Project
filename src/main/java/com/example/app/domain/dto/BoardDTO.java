@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Data
 public class BoardDTO {
-    private int anId;
+    private Long anId;
     private String anTitle;
     private String userId;
     private String anContent;

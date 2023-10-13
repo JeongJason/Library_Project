@@ -24,15 +24,20 @@ public class BoardController {
     private final BoardService boardService;
 
     // 게시글 조회
-    public BoardDTO getBoard(int anId){
-        return boardService.getBoard(anId);
+    @GetMapping(value={"/3-4post","/3-5modify"})
+    public void getBoard(Search search, Criteria criteria, Long anId, Model model) {
+        model.addAttribute(boardService.getBoard(anId));
     }
 
     // 게시글 목록
     @GetMapping("/notice")
-    public void showList(Search search ,Criteria criteria, Model model){
-        model.addAttribute("list", boardService.getList(criteria, search));
+    public void showList(Search search,  Criteria criteria, Model model){
+        System.out.println("GET /boards/notice..."+search);
+        List<BoardDTO> list = boardService.getList(criteria, search);
+        model.addAttribute("list", list);
         Long total = boardService.getTotal(search);
+        System.out.println("Count : " + total);
+
         PageMakerDTO pageMaker = new PageMakerDTO(criteria, total);
 
         Long totalPostCount = boardService.getTotal(search);
@@ -54,11 +59,18 @@ public class BoardController {
     }
 
     // 게시글 삭제
-    public void remove(int anId){
+    @GetMapping("/remove")
+    public RedirectView remove(Long anId){
         boardService.delete(anId);
+        return new RedirectView("/boards/notice");
     }
     // 게시글 수정
-    public void modify(BoardDTO boardDTO){
+    @PostMapping("/3-5modify")
+    public RedirectView modify(Criteria criteria, Search search, BoardDTO boardDTO, RedirectAttributes redirectAttributes) {
         boardService.modify(boardDTO);
+        redirectAttributes.addAttribute("anId", boardDTO.getAnId());
+        redirectAttributes.addFlashAttribute(criteria);
+        redirectAttributes.addFlashAttribute(search);
+        return  new RedirectView("/boards/3-4post");
     }
 }

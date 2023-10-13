@@ -16,19 +16,19 @@ public class BoardService {
     private final BoardMapper boardmapper;
 
     // 게시글 조회
-    public BoardDTO getBoard(int anId){
+    public BoardDTO getBoard(Long anId){
         return boardmapper.select(anId);
     }
     // 게시글 목록
     public List<BoardDTO> getList(Criteria criteria, Search search){
-        return boardmapper.selectAll(criteria,search);
+        return boardmapper.selectAll(criteria, search);
     }
     // 게시글 추가
     public void write(BoardDTO boardDTO){
         boardmapper.insert(boardDTO);
     }
     // 게시글 삭제
-    public void delete(int anId){
+    public void delete(Long anId){
         boardmapper.delete(anId);
     }
     // 게시글 수정
