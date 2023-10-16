@@ -66,11 +66,11 @@
           <div class="content">
             <h2>게시글 수정</h2>
             <div class="form">
-              <form method="post" th:action="@{/boards/3-5modify}" id="registForm" th:object="${boardDTO}">
+              <form method="post" th:action="@{/boards/3-5modify}" id="registForm" th:object="${board}">
                 <input type ="hidden" name="page" th:value="${criteria.pageNum}">
                 <input type ="hidden" name="type" th:value="${search.type}">
                 <input type ="hidden" name="keyword" th:value="${search.keyword}">
-                <input type ="hidden" name="anId" th:value="${boardDTO.anId}">
+                <input type ="hidden" name="anId" th:value="${board.anId}">
                 <div class="fields">
                   <div class="field">
                     <h4>작성자</h4>
@@ -91,7 +91,7 @@
                 </div>
                 <div class="actions_special">
                   <input type="submit" id="btn_submit" class="regbtn" value="수정완료" />
-                  <a th:href="@{/boards/3-4post(anId=${boardDTO.anId}, pageNum=${criteria.pageNum},type=${search.type}, keyword=${search.keyword})}" class="cancelbtn">취소</a>
+                  <a th:href="@{/boards/3-4post(anId=${board.anId}, pageNum=${criteria.pageNum},type=${search.type}, keyword=${search.keyword})}" class="cancelbtn">취소</a>
                 </div>
               </form>
             </div>

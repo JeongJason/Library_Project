@@ -24,7 +24,7 @@
     display: inline-flex;
     float: right;
     gap: 40px;
-    padding-top: 10px;
+    padding: 10px 10px 0 0;
 }
 
 .tnb_menu>a {
@@ -74,15 +74,11 @@
     width: 100%;
     z-index: 1;
     /* 하위메뉴판 뒷배경 백그라운드 색상 */
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 /* 하위메뉴- 자료검색, 대여안내, 열린공간, 도서관 안내, 나의 도서관 글씨 색상 */
-.gnb_mm1>a,
-.gnb_mm2>a,
-.gnb_mm3>a,
-.gnb_mm4>a,
-.gnb_mm5>a {
+.gnb_m1>a {
     color: rgba(60, 60, 60, 1);
 }
 
@@ -99,11 +95,7 @@
     overflow: hidden;
 }
 
-.gnb_mmm>.gnb_mm1,
-.gnb_mmm>.gnb_mm2,
-.gnb_mmm>.gnb_mm3,
-.gnb_mmm>.gnb_mm4,
-.gnb_mmm>.gnb_mm5 {
+.gnb_mmm>.gnb_m1 {
     padding-left: 7px;
     height: 30px;
     font-size: 21px;
@@ -141,7 +133,7 @@
     border: 4px solid rgba(40, 40, 40, 0%);
     border-radius: 25px;
     /* 사각형 안에 백그라운드 색상 */
-    background-color: rgba(40, 40, 40, 0.8);
+    background-color: rgba(60, 60, 60, 0.9);
 }
 
 /* 하위메뉴- 사각형 안에 글씨 색상 */
@@ -158,10 +150,7 @@
 .gnb_m4-3>a,
 .gnb_m5-1>a,
 .gnb_m5-2>a {
-    /* 백그라운드 color: white; 시 적용 */
     color: white;
-    /* color: black; */
-    /* color: rgba(60, 60, 60, 1); */
 }
 
 /* 하위메뉴 빈칸 */
@@ -174,42 +163,35 @@
     display: block;
 }
 
-
-
-.gnb_menu2:hover {
-    display: block;
+/* 특정 하위 메뉴 항목에 대한 예시 */
+.gnb_m1-1:hover,
+.gnb_m1-2:hover,
+.gnb_m1-3:hover,
+.gnb_m2-1:hover,
+.gnb_m2-2:hover,
+.gnb_m2-3:hover,
+.gnb_m3-1:hover,
+.gnb_m3-2:hover,
+.gnb_m4-1:hover,
+.gnb_m4-2:hover,
+.gnb_m4-3:hover,
+.gnb_m5-1:hover,
+.gnb_m5-2:hover {
+    background-color: white;
 }
 
-
-
-.gnb_menu1:hover .gnb_m1-1,
-.gnb_menu1:hover .gnb_m1-2,
-.gnb_menu1:hover .gnb_m1-3 {
-    background-color: navy;
-}
-
-.gnb_menu2:hover .gnb_m2-1,
-.gnb_menu2:hover .gnb_m2-2,
-.gnb_menu2:hover .gnb_m2-3 {
-    background-color: green;
-    /* 원하는 색상으로 변경 */
-}
-
-.gnb_menu3:hover .gnb_m3-1,
-.gnb_menu3:hover .gnb_m3-2 {
-    background-color: red;
-    /* 원하는 색상으로 변경 */
-}
-
-.gnb_menu4:hover .gnb_m4-1,
-.gnb_menu4:hover .gnb_m4-2,
-.gnb_menu4:hover .gnb_m4-3 {
-    background-color: yellow;
-    /* 원하는 색상으로 변경 */
-}
-
-.gnb_menu5:hover .gnb_m5-1,
-.gnb_menu5:hover .gnb_m5-2 {
-    background-color: purple;
-    /* 원하는 색상으로 변경 */
+.gnb_m1-1>a:hover,
+.gnb_m1-2>a:hover,
+.gnb_m1-3>a:hover,
+.gnb_m2-1>a:hover,
+.gnb_m2-2>a:hover,
+.gnb_m2-3>a:hover,
+.gnb_m3-1>a:hover,
+.gnb_m3-2>a:hover,
+.gnb_m4-1>a:hover,
+.gnb_m4-2>a:hover,
+.gnb_m4-3>a:hover,
+.gnb_m5-1>a:hover,
+.gnb_m5-2>a:hover {
+    color: rgba(60, 60, 60, 1);
 }

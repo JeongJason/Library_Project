@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class SimpleController {
 
     @GetMapping("/main")
-    public void goMain(){
-
+    public String goMain(){
+        return "main";
     }
 
 }

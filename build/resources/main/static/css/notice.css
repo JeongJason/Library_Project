@@ -1,17 +1,20 @@
-i{
+i {
     display: inline-block;
     position: relative;
 }
-.main_wrap{
+
+.main_wrap {
     max-width: 1260px;
     margin: 0 auto;
 }
+
 /* 사이드바 */
-.left_con{
+.left_con {
     padding: 20px 0px;
     gap: 20px;
 }
-.left_con h2{
+
+.left_con h2 {
     /* height: 122px; */
     border-bottom: 2px solid rgb(42, 178, 196);
     display: block;
@@ -22,60 +25,70 @@ i{
     position: relative;
     margin-bottom: 30px;
     padding-bottom: 30px;
-    
+
 }
-.body_wrap>.container{
+
+.body_wrap>.container {
     display: flex;
     padding: 20px 0px;
     gap: 20px;
     min-height: 400px;
 }
-.body_wrap>.container>.left_menu{
+
+.body_wrap>.container>.left_menu {
     width: 200px;
     /* background-color: pink; */
     padding: 20px;
-    flex-shrink: 0; /*너비200px 무조건 고정(축소가되는 비율 0)*/
+    flex-shrink: 0;
+    /*너비200px 무조건 고정(축소가되는 비율 0)*/
 }
-.card1{
+
+.card1 {
     height: 60px;
     border-bottom: 1px solid gray;
     line-height: 60px;
     padding-left: 5px;
     margin-top: -10px;
 }
-.card1 :hover{
-    color: gray ;
+
+.card1 :hover {
+    color: gray;
 }
-.card2{
+
+.card2 {
     height: 60px;
     border-bottom: 1px solid gray;
     line-height: 60px;
     padding-left: 5px;
 }
-.card2 :hover{
-    color: gray ;
+
+.card2 :hover {
+    color: gray;
 }
 
 /* 본문 */
-.mb_info{
+.mb_info {
     /* background-color: gray; */
     flex-grow: 1;
     padding: 20px;
 }
-.mb_info>.title_wrap{
+
+.mb_info>.title_wrap {
     position: relative;
     margin-bottom: 30px;
-    
+
     /* padding-bottom: 30px; */
     border-bottom: 2px solid rgb(42, 178, 196);
     /* background-color: #4c4c4c;  */
-    
+
 }
-.mb_info>.title_wrap h2{
+
+.mb_info>.title_wrap h2 {
     margin: 0;
     line-height: 100px;
 }
-.mb_info>.table_header{
+
+.mb_info>.table_header {
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid black;
@@ -86,7 +99,8 @@ span.bunch {
     display: inline-block;
     vertical-align: middle;
 }
-#sFld{
+
+#sFld {
     width: 90px;
     min-width: 85px;
     height: 34px;
@@ -94,7 +108,8 @@ span.bunch {
     background-color: #fff;
     line-height: 29px;
 }
-input{
+
+input {
     width: 300px;
     height: 33px;
     border: 1px solid #d1d0cf;
@@ -105,7 +120,8 @@ input{
     padding: 0 3px;
     margin-bottom: 10px;
 }
-.btn_search{
+
+.btn_search {
     width: auto;
     min-width: 50px;
     height: 36px;
@@ -115,58 +131,70 @@ input{
     line-height: 30px;
     text-align: center;
     color: white;
-    background-color:  rgb(42, 178, 196);
+    background-color: navy;
     border-radius: 5px;
     border: none;
 }
-.btn_write{
+
+.btn_write {
     width: auto;
     min-width: 50px;
     height: 36px;
     vertical-align: top;
     margin-bottom: 10px;
     margin-left: -2px;
-    line-height: 33px;   
+    line-height: 33px;
     text-align: center;
-    background-color:  rgb(42, 178, 196);
+    background-color: navy;
     border-radius: 5px;
     border: none;
 }
 
 
 /* 공지사항 목록 */
-table,th,td{
+table,
+th,
+td {
     border-collapse: collapse;
     border-spacing: 0;
     font-size: inherit;
     word-break: break-all;
 }
-table{
-    width:100%;
+
+table {
+    width: 100%;
     border-bottom: 5px double gray;
-   }
-table th, table td {
+}
+
+table th,
+table td {
     border-bottom: 1px solid lightgray;
-    padding:7px 10px;border-left:0;border-right:0;
+    padding: 7px 10px;
+    border-left: 0;
+    border-right: 0;
     text-align: center;
 }
-thead{
+
+thead {
     display: table-header-group;
     vertical-align: middle;
     border-color: inherit;
 }
-tbody{
+
+tbody {
     display: table-row-group;
     vertical-align: middle;
     border-color: inherit;
 }
-tr{
+
+tr {
     display: table-row;
     vertical-align: inherit;
     border-color: inherit;
     height: 50px;
 }
-.tdt{
+
+.tdt {
     width: 40%;
 }
 
@@ -202,5 +230,3 @@ li.pageInfo_btn{
     font-size:13px;
     border:1px solid #d9d9d9;
     background:#fafafa;margin-left:-1px;color:#555;-moz-background-clip:padding-box;-webkit-background-clip:padding-box;background-clip:padding-box}
-
-
