@@ -1,6 +1,9 @@
 package com.example.app.controller;
 
 import com.example.app.domain.dto.BookDTO;
+import com.example.app.domain.dto.Search;
+import com.example.app.domain.paging.Criteria;
+import com.example.app.domain.paging.PageMakerDTO;
 import com.example.app.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -10,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
+
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -28,10 +33,20 @@ public class BookController {
      */
 
 
+
     //    도서 목록
-    @GetMapping("list")
-    public void showList(Model model){
-        model.addAttribute("book", bookService.getList());
+    @GetMapping("/1-1search")
+    public void showList(Search search, Criteria criteria, Model model){
+        Criteria criteriaBook = new Criteria(1, 5);
+        List<BookDTO> list = bookService.getList(criteriaBook, search);
+        model.addAttribute("listBook", list);
+        Long total = bookService.getListCount(search);
+        criteriaBook.setPageNum(criteriaBook.getPageNum());
+        PageMakerDTO pageMaker = new PageMakerDTO(criteriaBook, total);
+
+        Long totalPostCount = bookService.getListCount(search);
+        model.addAttribute("totalPostCount", totalPostCount);
+        model.addAttribute("pageMaker", pageMaker);
     }
 
     //    도서 조회

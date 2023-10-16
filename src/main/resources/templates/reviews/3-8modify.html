@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="css/basic.css">
-    <link rel="stylesheet" href="css/sub_header.css">
-    <link rel="stylesheet" href="css/sub_main.css">
-    <link rel="stylesheet" href="css/notice.css">
-    <link rel="stylesheet" href="css/write.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="/css/basic.css">
+    <link rel="stylesheet" href="/css/sub_header.css">
+    <link rel="stylesheet" href="/css/sub_main.css">
+    <link rel="stylesheet" href="/css/notice.css">
+    <link rel="stylesheet" href="/css/write.css">
+    <link rel="stylesheet" href="/css/footer.css">
 
 
 </head>
@@ -20,22 +20,22 @@
       <div class="header_top">
         <div class="ht_info">
           <div class="tnb_menu">
-            <a href="./login.html">로그인</a>
-            <a href="./signup.html">회원가입</a>
+            <a href="../login.html">로그인</a>
+            <a href="../signup.html">회원가입</a>
           </div>
         </div>
       </div>
       <div class="header_bottom">
         <div class="hb_info">
           <div class="gnb">
-            <a href="./main.html"><img class="BeomeoLogoB1" src="css/img/beomeo_logo_b.png"></a>
+            <a href="../main.html"><img class="BeomeoLogoB1" src="/img/beomeo_logo_b.png"></a>
             <ul class="gnb_menu">
-              <li><a href="./1-1search.html">자료검색</a></li>
-              <li><a href="./2-1lend.html">대여안내</a></li>
+              <li><a href="../1-1search.html">자료검색</a></li>
+              <li><a href="../2-1lend.html">대여안내</a></li>
               <li><a href="./3-1notice.html">열린공간</a></li>
-              <li><a href="./4-1greetings.html">도서관 소개</a></li>
-              <li><a href="./5-1myInfo.html">나의 도서관</a></li>
-              <li><a href=""><img src="css/img/menubar.png" style="width: 35px; height: 35px; padding-top: 3px;" alt="메뉴바"></a></li>
+              <li><a href="../4-1greetings.html">도서관 소개</a></li>
+              <li><a href="../5-1myInfo.html">나의 도서관</a></li>
+              <li><a href=""><img src="/img/menubar.png" style="width: 35px; height: 35px; padding-top: 3px;" alt="메뉴바"></a></li>
             </ul>
           </div>
         </div>
@@ -48,7 +48,7 @@
         </div>
         <div class="mt_index2">
           <ul>
-            <li class="home"><a href=""><img src="css/img/navi_home_icon.gif" alt="Home"></a></li>
+            <li class="home"><a href=""><img src="/img/navi_home_icon.gif" alt="Home"></a></li>
             <li><a href="./3-1notice.html">열린공간</a></li>
             <li>공지사항</li>
             <li>게시글 수정</li>
@@ -57,7 +57,7 @@
         <div class="mt_info">
           <ul class="mt_menu">
             <li class="mt_m"><a href="./3-1notice.html">공지사항</a></li>
-            <li class="mt_m"><a href="./3-2review.html">도서리뷰</a></li>
+            <li class="mt_m"><a href="../3-2review.html">도서리뷰</a></li>
           </ul>
         </div>
       </div>
@@ -66,15 +66,19 @@
           <div class="content">
             <h2>게시글 수정</h2>
             <div class="form">
-              <form method="post" action="/board/register" id="registForm">
+              <form method="post" th:action="@{/reviews/3-8modify}" id="registForm" th:object="${reviewDTO}">
+                <input type ="hidden" name="page" th:value="${criteria.pageNum}">
+                <input type ="hidden" name="type" th:value="${search.type}">
+                <input type ="hidden" name="keyword" th:value="${search.keyword}">
+                <input type ="hidden" name="revId" th:value="${reviewDTO.revId}">
                 <div class="fields">
                   <div class="field">
                     <h4>작성자</h4>
-                    <input name="writer" placeholder="Writer" type="text" readonly />
+                    <input name="writer" th:field="*{userId}" type="text" readonly />
                   </div>
                   <div class="field">
                     <h4>제목</h4>
-                    <input name="title" placeholder="Title" type="text" />
+                    <input name="title" th:field="*{revTitle}" type="text" />
                   </div>
                   <div class="field2">
                     <h4>파일 첨부</h4>
@@ -82,12 +86,12 @@
                   </div>
                   <div class="field">
                     <h4>내용</h4>
-                    <textarea style="min-height: 270px; width: 100%;font-size: 15px;" name="content" placeholder="Content" ></textarea>
+                    <textarea style="min-height: 270px; width: 100%;font-size: 15px;" name="content" placeholder="Content" th:field="*{revContent}"></textarea>
                   </div>
                 </div>
                 <div class="actions_special">
                   <input type="submit" id="btn_submit" class="regbtn" value="수정완료" />
-                  <button><a href="/board.html" class="cancelbtn">취소</a></button>
+                  <a th:href="@{/reviews/3-7post(revId=${reviewDTO.revId}, pageNum=${criteria.pageNum},type=${search.type}, keyword=${search.keyword})}" class="cancelbtn">취소</a>
                 </div>
               </form>
             </div>

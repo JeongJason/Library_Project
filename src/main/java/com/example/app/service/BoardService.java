@@ -28,7 +28,7 @@ public class BoardService {
         boardmapper.insert(boardDTO);
     }
     // 게시글 삭제
-    public void delete(int anId){
+    public void delete(Long anId){
         boardmapper.delete(anId);
     }
     // 게시글 수정

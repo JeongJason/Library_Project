@@ -47,7 +47,7 @@ public class BoardMapperTests {
 
     @Test
     public void deleteTest(){
-        boardMapper.delete(4);
+        boardMapper.delete(4L);
     }
 
 }
