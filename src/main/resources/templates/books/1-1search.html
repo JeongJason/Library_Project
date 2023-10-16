@@ -19,27 +19,27 @@
         <div class="header_top">
             <div class="ht_info">
                 <div class="tnb_menu">
-                    <a href="./login.html">로그인</a>
-                    <a href="./signup.html">회원가입</a>
+                    <a href="/login.html">로그인</a>
+                    <a href="/signup.html">회원가입</a>
                 </div>
             </div>
         </div>
         <div class="header_bottom">
             <div class="hb_info">
                 <div class="gnb">
-                    <a href="./main.html"><img class="BeomeoLogoB1" src="/img/beomeo_logo_b.png"></a>
+                    <a href="/main"><img class="BeomeoLogoB1" src="/img/beomeo_logo_b.png"></a>
                     <!--new start 10월 13일 수정-->
                     <ul class="gnb_menu">
-                        <li><a href="./1-1search.html">자료검색</a>
+                        <li><a th:href="@{books/1-1search}">자료검색</a>
                             <div class="gnb_m">
                                 <div class="gnb_mm">
                                     <ul class="gnb_mmm">
-                                        <li class="gnb_m1"><a href="" title=""><span>자료검색</span></a></li>
-                                        <li class="gnb_m1"><a href="" title=""><span>대여안내</span></a></li>
-                                        <li class="gnb_m1"><a href="" title=""><span>열린공간</span></a></li>
-                                        <li class="gnb_m1"><a href="" title=""><span>도서관 소개</span></a></li>
-                                        <li class="gnb_m1"><a href="" title=""><span>나의 도서관</span></a></li>
-                                        <li class="gnb_m1-1"><a href="./1-1search.html" title="통합자료검색"><span><svg
+                                        <li class="gnb_m1"><a th:href="@{books/1-1search}" title=""><span>자료검색</span></a></li>
+                                        <li class="gnb_m1"><a href="/2-1lend.html" title=""><span>대여안내</span></a></li>
+                                        <li class="gnb_m1"><a th:href="@{boards/notice}" title=""><span>열린공간</span></a></li>
+                                        <li class="gnb_m1"><a href="/4-1greetings.html" title=""><span>도서관 소개</span></a></li>
+                                        <li class="gnb_m1"><a href="/5-1myinfo.html" title=""><span>나의 도서관</span></a></li>
+                                        <li class="gnb_m1-1"><a th:href="@{books/1-1search}" title="통합자료검색"><span><svg
                                                 xmlns="http://www.w3.org/2000/svg" width="40" height="40"
                                                 fill="currentColor" style="padding-top: 15px;" class="bi bi-search"
                                                 viewBox="0 0 16 16">
@@ -69,7 +69,7 @@
                                                 class="bi bi-person-fill-lock" viewBox="0 0 16 16">
                         <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5v-1a1.9 1.9 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Zm7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2Zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1Z"/>
                       </svg><br>나의 정보수정</span></a></li>
-                                        <li class="gnb_m1-2"><a href="./1-2recommend.html" title="추천도서"><span><svg
+                                        <li class="gnb_m1-2"><a href="/1-2recommend.html" title="추천도서"><span><svg
                                                 xmlns="http://www.w3.org/2000/svg" width="40" height="40"
                                                 fill="currentColor" style="padding-top: 15px;"
                                                 class="bi bi-bookmark-star-fill" viewBox="0 0 16 16">
@@ -131,10 +131,10 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a href="./2-1lend.html">대여안내</a></li>
-                        <li><a href="./3-1notice.html">열린공간</a></li>
-                        <li><a href="./4-1greetings.html">도서관 소개</a></li>
-                        <li><a href="./5-1myInfo.html">나의 도서관</a></li>
+                        <li><a href="/2-1lend.html">대여안내</a></li>
+                        <li><a href="/3-1notice.html">열린공간</a></li>
+                        <li><a href="/4-1greetings.html">도서관 소개</a></li>
+                        <li><a href="/5-1myInfo.html">나의 도서관</a></li>
                         <!--new start 10월 13일 메뉴바 수정-->
                         <li><a href="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
@@ -157,18 +157,18 @@
             </div>
             <div class="mt_index2">
                 <ul>
-                    <li class="home"><a href=""><img src="/img/navi_home_icon.gif" alt="Home"></a></li>
-                    <li><a href="./1-1search.html">자료검색</a></li>
+                    <li class="home"><a href="/main.html"><img src="/img/navi_home_icon.gif" alt="Home"></a></li>
+                    <li><a th:href="@{books/1-1search}">자료검색</a></li>
                     <li>통합자료검색</li>
                 </ul>
             </div>
             <div class="mt_info">
                 <ul class="mt_menu">
-                    <li class="mt_m" style="background-color: rgb(42, 178, 196);"><a href="./1-1search.html"
+                    <li class="mt_m" style="background-color: rgb(42, 178, 196);"><a th:href="@{books/1-1search}"
                                                                                      style="color: white">통합자료검색</a>
                     </li>
-                    <li class="mt_m"><a href="./1-2recommend.html">추천도서</a></li>
-                    <li class="mt_m"><a href="./1-3hope.html">희망도서신청</a></li>
+                    <li class="mt_m"><a href="/1-2recommend.html">추천도서</a></li>
+                    <li class="mt_m"><a href="/1-3hope.html">희망도서신청</a></li>
                 </ul>
             </div>
         </div>

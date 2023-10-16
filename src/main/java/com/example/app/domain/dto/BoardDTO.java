@@ -12,4 +12,7 @@ public class BoardDTO {
     private String anContent;
     private String anRegisterDate;
     private String anUpdateDate;
+
+    // 조회수
+    private int anViewCnt;
 }

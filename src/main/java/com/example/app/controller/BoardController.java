@@ -8,6 +8,7 @@ import com.example.app.service.BoardService;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,10 +24,29 @@ import java.util.List;
 public class BoardController {
     private final BoardService boardService;
 
+//    // 게시글 조회
+//    @GetMapping(value={"/3-4post","/3-5modify"})
+//    public void getBoard(Search search, Criteria criteria, Long anId, Model model) {
+//        model.addAttribute(boardService.getBoard(anId));
+//    }
     // 게시글 조회
-    @GetMapping(value={"/3-4post","/3-5modify"})
-    public void getBoard(Search search, Criteria criteria, Long anId, Model model) {
-        model.addAttribute(boardService.getBoard(anId));
+        @GetMapping("/3-4post")
+        public String getBoard(Search search, Criteria criteria, Long anId, Model model) {
+            // 조회수 증가를 포함한 게시물 조회
+            BoardDTO boardDTO = boardService.getBoard(anId);
+            model.addAttribute("board", boardDTO);
+
+            return "boards/3-4post";
+        }
+
+    // 게시글 수정 페이지
+    @GetMapping("/3-5modify")
+    public String getModifyPage(Search search, Criteria criteria, Long anId, Model model) {
+        // 게시물 정보를 가져옴
+        BoardDTO boardDTO = boardService.getBoard(anId);
+        model.addAttribute("board", boardDTO);
+
+        return "boards/3-5modify";
     }
 
     // 게시글 목록
@@ -59,6 +79,7 @@ public class BoardController {
     }
 
     // 게시글 삭제
+    @Transactional
     @GetMapping("/remove")
     public RedirectView remove(Long anId){
         boardService.delete(anId);
