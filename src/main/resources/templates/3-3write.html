@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 
-    <link rel="stylesheet" href="/css/basic.css">
-    <link rel="stylesheet" href="/css/sub_header.css">
-    <link rel="stylesheet" href="/css/sub_main.css">
-    <link rel="stylesheet" href="/css/notice.css">
-    <link rel="stylesheet" href="/css/write.css">
-    <link rel="stylesheet" href="/css/footer.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="css/basic.css">
+  <link rel="stylesheet" href="css/sub_header.css">
+  <link rel="stylesheet" href="css/sub_main.css">
+  <link rel="stylesheet" href="css/notice.css">
+  <link rel="stylesheet" href="css/write.css">
+  <link rel="stylesheet" href="css/editor.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Gothic:wght@400;700;800&family=Nanum+Myeongjo:wght@400;700;800&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
+  <link rel="stylesheet" href="css/footer.css">
 
 
 </head>
+
 <body>
   <div class="wrapper">
     <header class="header_wrap">
@@ -28,17 +35,19 @@
       <div class="header_bottom">
         <div class="hb_info">
           <div class="gnb">
-            <a href="./main.html"><img class="BeomeoLogoB1" src=" /img/beomeo_logo_b.png"></a>
+            <a href="./main.html"><img class="BeomeoLogoB1" src="css/img/beomeo_logo_b.png"></a>
             <ul class="gnb_menu">
               <li><a href="./1-1search.html">자료검색</a></li>
               <li><a href="./2-1lend.html">대여안내</a></li>
-              <li><a href="boards/notice.html">열린공간</a></li>
+              <li><a href="./3-1notice.html">열린공간</a></li>
               <li><a href="./4-1greetings.html">도서관 소개</a></li>
               <li><a href="./5-1myInfo.html">나의 도서관</a></li>
               <!--new start 10월 13일 메뉴바 수정-->
-              <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" style="padding-top: 6px;" class="bi bi-list" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-              </svg></a></li>
+              <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
+                    style="padding-top: 6px;" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                  </svg></a></li>
               <!--new end-->
             </ul>
           </div>
@@ -48,20 +57,20 @@
     <div class="main_wrap">
       <div class="main_top">
         <div class="mt_index">
-          <h1>도서리뷰</h1>
+          <h1>공지사항</h1>
         </div>
         <div class="mt_index2">
           <ul>
-            <li class="home"><a href=""><img src=" /img/navi_home_icon.gif" alt="Home"></a></li>
-            <li><a href="boards/notice.html">열린공간</a></li>
-            <li>도서리뷰</li>
+            <li class="home"><a href=""><img src="css/img/navi_home_icon.gif" alt="Home"></a></li>
+            <li><a href="./3-1notice.html">열린공간</a></li>
+            <li>공지사항</li>
             <li>글쓰기</li>
 
           </ul>
         </div>
         <div class="mt_info">
           <ul class="mt_menu">
-            <li class="mt_m"><a href="boards/notice.html">공지사항</a></li>
+            <li class="mt_m"><a href="./3-1notice.html">공지사항</a></li>
             <li class="mt_m"><a href="./3-2review.html">도서리뷰</a></li>
           </ul>
         </div>
@@ -81,9 +90,76 @@
                     <h4>제목</h4>
                     <input name="title" placeholder="Title" type="text" />
                   </div>
+                  <div class="field2">
+                    <h4>파일 첨부</h4>
+                    <input name="title" placeholder="Title" type="file" />
+                  </div>
                   <div class="field">
                     <h4>내용</h4>
-                    <textarea style="min-height: 270px; width: 100%;font-size: 15px;" name="content" placeholder="Content" ></textarea>
+                    <!--new start 10월 15일 추가-->
+                    <div class="editor-menu">
+                      <select id="select-font-name">
+                        <option value="">글씨체</option>
+                        <option value="Black Han Sans">Black Han Sans</option>
+                        <option value="Noto Sans KR">Noto Sans</option>
+                        <option value="Nanum Gothic">Nanum Gothic</option>
+                        <option value="Nanum Myeongjo">Nanum Myeongjo</option>
+                        <option value="Nanum Pen Script">Nanum Pen Script</option>
+                      </select>
+                      <select id="select-font-size">
+                        <option value="">글씨 크기</option>
+                        <option value="1">10px</option>
+                        <option value="2">13px</option>
+                        <option value="3">16px</option>
+                        <option value="4">18px</option>
+                        <option value="5">24px</option>
+                        <option value="6">32px</option>
+                        <option value="7">48px</option>
+                      </select>
+                      <select id="select-font-color">
+                        <option value="">글씨 색상</option>
+                        <option value="#000000">검정</option>
+                        <option value="#FFFFFF">흰색</option>
+                        <option value="#CCCCCC">회색</option>
+                        <option value="#F03E3E">빨강</option>
+                        <option value="#1971C2">파랑</option>
+                        <option value="#37B24D">녹색</option>
+                      </select>
+                      <select id="select-font-background">
+                        <option value="rgba(0, 0, 0, 0)">형광펜</option>
+                        <option value="#000000">검정</option>
+                        <option value="#FFFFFF">흰색</option>
+                        <option value="#CCCCCC">회색</option>
+                        <option value="#F03E3E">빨강</option>
+                        <option value="#1971C2">파랑</option>
+                        <option value="#37B24D">녹색</option>
+                      </select>
+                      <button id="btn-bold">
+                        <b>B</b>
+                      </button>
+                      <button id="btn-italic">
+                        <i>I</i>
+                      </button>
+                      <button id="btn-underline">
+                        <u>U</u>
+                      </button>
+                      <button id="btn-strike">
+                        <s>S</s>
+                      </button>
+                      <button id="btn-ordered-list">
+                        OL
+                      </button>
+                      <button id="btn-unordered-list">
+                        UL
+                      </button>
+                      <button id="btn-image">
+                        IMG
+                      </button>
+                    </div>
+                    <div id="editor" contenteditable="true">
+                      <input id="img-selector" type="file" accept="image/*" />
+                    </div>
+                    <!--new end-->
                   </div>
                 </div>
                 <div class="actions_special">
@@ -100,21 +176,24 @@
       <div class="footer_top">
         <div class="ft_info">
           <div class="ft_menu">
-            <div ><a href="">개인정보처리방침</a></div>
-            <div ><a href="">영상정보처리방침</a></div>
-            <div ><a href="">이용약관</a></div>
-            <div ><a href="">도서관서비스헌장</a></div>
-            <div ><a href="">저작권보호정책</a></div>
-            <div ><a href="">뷰어다운로드</a></div>
+            <div><a href="">개인정보처리방침</a></div>
+            <div><a href="">영상정보처리방침</a></div>
+            <div><a href="">이용약관</a></div>
+            <div><a href="">도서관서비스헌장</a></div>
+            <div><a href="">저작권보호정책</a></div>
+            <div><a href="">뷰어다운로드</a></div>
           </div>
         </div>
       </div>
       <div class="footer_bottom">
         <div class="fb_info">
-          <p> 대구 수성구 달구벌대로 2451 (범어동, 범어도서관) 전화 053-668-1600 팩스 053-668-1609<br/>Copyright ⓒ 수성구립 범어도서관. All rights reserved.</p>
+          <p> 대구 수성구 달구벌대로 2451 (범어동, 범어도서관) 전화 053-668-1600 팩스 053-668-1609<br />Copyright ⓒ 수성구립 범어도서관. All rights
+            reserved.</p>
         </div>
       </div>
     </footer>
   </div>
+  <script defer src="js/editor.js"></script>
 </body>
+
 </html>
