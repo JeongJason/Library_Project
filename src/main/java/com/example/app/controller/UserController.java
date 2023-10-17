@@ -5,6 +5,7 @@ import com.example.app.domain.dto.BookDTO;
 import com.example.app.domain.dto.UserDTO;
 import com.example.app.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +17,6 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/user/*")
 public class UserController {
     private final UserService userService;
     private final PasswordEncoder passwordEncoder;
@@ -32,23 +32,21 @@ public class UserController {
     }
 
     //    회원가입 창으로 이동
-    @GetMapping("/register.do")
+    @GetMapping("/register")
     public String registerForm(){
-        return "/register";
+        return "/signup";
     }
 
     @PostMapping("/register")
-    public RedirectView register(UserDTO userDTO, RedirectAttributes redirectAttributes){
+    public String register(UserDTO userDTO) {
         userService.write(userDTO);
-        redirectAttributes.addFlashAttribute("uId", userDTO.getUserId());
-//        추가후 새로고침을해도 redirect로 인해 list로 가더라도 계속 추가되지않는다.
-        return new RedirectView("/user/registerSuccess");
+        return "/login";
     }
 
     @PostMapping("/modify")
     public RedirectView modify(Principal principal,RedirectAttributes redirectAttributes, UserDTO userDTO){
         PrincipalDetails principalDetails = (PrincipalDetails)principal;
-        principalDetails.setUserDTO(userDTO);
+        principalDetails.setDto(userDTO);
         userService.modify(userDTO);
         redirectAttributes.addAttribute("userId", userDTO.getUserId());
         return new RedirectView("/user/read");
@@ -62,9 +60,8 @@ public class UserController {
     }
 
     //    로그인 창으로 이동
-    @GetMapping("/login.do")
-    public String loginForm(){
-        return "/login";
+    @GetMapping("/login")
+    public void loginForm(){
     }
 
 }

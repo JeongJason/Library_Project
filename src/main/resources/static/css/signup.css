@@ -52,7 +52,7 @@
     text-align: center;
 }
 
-#signup_info, .signup_id{
+.signup_info, .signup_id{
     padding: 0px;
     border: none;
     border-bottom: 1px solid #CFCFCF;
@@ -100,7 +100,7 @@
     height: 30px;
 }
 
-#signup_email, #signup_email_prefix{
+.signup_email, #signup_email_prefix{
     padding: 0px;
     border: none;
     border-bottom: 1px solid #CFCFCF;
@@ -114,7 +114,7 @@
     height: 30px;
 }
 
-#signup_age{
+.signup_age{
     padding: 0px;
     border: none;
     border-bottom: 1px solid #CFCFCF;

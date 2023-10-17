@@ -49,15 +49,15 @@
       <div class="main_bottom">
         <div class="login_top">
           <div class=login_form>
-            <form class="form">
+            <form class="form" th:action="@{/login}" method="post">
               <p class="form-title">로그인</p>
               <div class="input-container">
-                <input type="email" placeholder="아이디를 입력해주세요">
+                <input type="test" name="userId" id="userId" placeholder="아이디를 입력해주세요">
                   <span>
                   </span>
               </div>
               <div class="input-container">
-                <input type="password" placeholder="비밀번호를 입력해주세요">
+                <input type="password" name="userPw" id="userPw" placeholder="비밀번호를 입력해주세요">
               </div>
                 <button type="submit" class="submit">로그인</button>
                 <p class="signup-link">계정이 없으신가요?  <a href="./signup.html">  회원가입</a></p>

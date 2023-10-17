@@ -13,7 +13,7 @@ public interface UserMapper {
 
 
     // 회원 조회 및 아이디중복체크
-    public UserDTO findByUid(String uId);
+    public UserDTO findByUid(String userId);
 
     // 회원 목록 조회
     public List<UserDTO> findAll();
@@ -22,7 +22,7 @@ public interface UserMapper {
     public void register(UserDTO userDTO);
 
     // 회원 삭제
-    public void delete(String uId);
+    public void delete(String userId);
 
     // 회원 정보 수정
     public void update(UserDTO userDTO);

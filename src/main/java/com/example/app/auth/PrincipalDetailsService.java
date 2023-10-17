@@ -2,7 +2,9 @@ package com.example.app.auth;
 
 import com.example.app.domain.dto.UserDTO;
 import com.example.app.mapper.UserMapper;
+import com.example.app.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -15,18 +17,33 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class PrincipalDetailsService implements UserDetailsService {
 
-    private final UserMapper userMapper;
+    @Autowired
+    private UserMapper userMapper;
+
+    @Autowired
+    private UserService userService;
 
     @Override
-    public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        UserDTO userDTO = userMapper.findByUid(userId);
-
-        if (userDTO == null) {
-            throw new UsernameNotFoundException("해당 사용자를 찾을 수 없습니다: " + userId);
+        if(username == null || username.isEmpty()){
+            throw new UsernameNotFoundException("Username is empty");
         }
 
-        // PrincipalDetails 클래스의 생성자를 UserDTO를 받도록 수정
-        return new PrincipalDetails(userDTO);
+        UserDTO userDTO = userService.getUser(username);
+
+        if( userDTO == null){
+            throw new UsernameNotFoundException("Could not find user");
+        }
+
+        PrincipalDetails principal = new PrincipalDetails();
+        principal.setDto(userDTO);
+
+        System.out.println("Loaded user details: " + principal);
+
+        return principal;
+
     }
+
 }
+

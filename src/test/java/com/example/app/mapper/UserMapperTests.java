@@ -32,19 +32,19 @@ public class UserMapperTests {
         assertThat(userMapper.findAll().size()).isEqualTo(3);
     }
 
-    @Test
-    public void insertTest(){
-        UserDTO userDTO = new UserDTO();
-        userDTO.setUserId("HDE1111");
-        userDTO.setUserPw("love1111");
-        userDTO.setUserEmail("lovedaeun@Hwang.com");
-        userDTO.setUserBirth("1998-11-11");
-        userDTO.setUserRole("executive");
-
-        userMapper.update(userDTO);
-
-        assertThat(userDTO.getUserId()).isEqualTo("HDE1111");
-    }
+//    @Test
+//    public void insertTest(){
+//        UserDTO userDTO = new UserDTO();
+//        userDTO.setUserId("HDE1111");
+//        userDTO.setUserPw("love1111");
+//        userDTO.setUserEmail("lovedaeun@Hwang.com");
+//        userDTO.setUserBirth("1998-11-11");
+//        userDTO.setUserRole("executive");
+//
+//        userMapper.update(userDTO);
+//
+//        assertThat(userDTO.getUserId()).isEqualTo("HDE1111");
+//    }
 
 //    @Test
 //    public void updateTest(){

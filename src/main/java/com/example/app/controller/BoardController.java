@@ -74,6 +74,7 @@ public class BoardController {
     @PostMapping("/write")
     public RedirectView write(BoardDTO boardDTO, RedirectAttributes redirectAttributes){
         boardService.write(boardDTO);
+        System.out.println(boardDTO);
         redirectAttributes.addFlashAttribute("anId", boardDTO.getAnId());
         return new RedirectView("/boards/notice");
     }
