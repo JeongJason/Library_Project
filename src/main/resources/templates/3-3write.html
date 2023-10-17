@@ -80,7 +80,9 @@
           <div class="content">
             <h2>글쓰기</h2>
             <div class="form">
-              <form method="post" action="/board/register" id="registForm">
+              <!--new start form에 onsubmit="return false" 추가-->
+              <form method="post" action="/board/register" id="registForm" onsubmit="return false">
+                <!--new end-->
                 <div class="fields">
                   <div class="field">
                     <h4>작성자</h4>
@@ -162,10 +164,13 @@
                     <!--new end-->
                   </div>
                 </div>
+                <!--new start 10월 17일 버튼 수정-->
                 <div class="actions_special">
-                  <input type="submit" id="btn_submit" class="regbtn" value="등록" />
-                  <button><a href="/board.html" class="cancelbtn">취소</a></button>
+                  <button id="btn_submit" class="regbtn" style="    background-color: navy;"><a href=""
+                      style="    color: white;">등록</a></button>
+                  <button id="btn_submit" class="regbtn"><a href="">취소</a></button>
                 </div>
+                <!--new end-->
               </form>
             </div>
           </div>
@@ -194,6 +199,18 @@
     </footer>
   </div>
   <script defer src="js/editor.js"></script>
+  <!-- new start 10월 16일 js 추가-->
+  <script>
+
+    const regbtn = document.querySelector('.regbtn');
+    regbtn.addEventListener('click', function () {
+      const form = document.boardwriter;
+      form.submit();
+
+    });
+
+  </script>
+  <!--new end-->
 </body>
 
 </html>
