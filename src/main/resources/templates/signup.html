@@ -64,12 +64,13 @@
               <label class="signup_info_form" >* 이름<br>
                 <input class="signup_info" type="text" name="userName" th:field="*{userName}"/><br><br>
               </label>
-              <label class="signup_info_form" for=>* 생년월일<br>
-                <input class="signup_age" name="year" type="text" th:field="*{userBirth}" required/>년 &nbsp<input class="signup_age" name="month" type="text" th:field="*{userBirth}" required/>월 &nbsp<input class="signup_age" name="day" type="text" th:field="*{userBirth}" required/>일<br><br>
-              </label>
-              <label class="signup_info_form" for=>* 이메일<br>
-                <input class="signup_email" type="text" th:field="*{emailPrefix}" required>@ <input id="signup_email" type='text' name="email_dns" th:field="*{emailDns}" required>
-                <input type="hidden" th:field="*{email}" th:value="${userDTO.emailPrefix + '@' + userDTO.emailDns}" />
+                </label>
+                <label class="signup_info_form" for=>* 생년월일<br>
+                  <input class="signup_age" name="year" type="text" th:field="*{userBirth}" required/>년 &nbsp<input class="signup_age" name="month" type="text" th:field="*{userBirth}" required/>월 &nbsp<input class="signup_age" name="day" type="text" th:field="*{userBirth}" required/>일<br><br>
+                </label>
+                <label class="signup_info_form" for=>* 이메일<br>
+                  <input class="signup_email" type="text" name="emailPrefix" th:field="*{emailPrefix}" required>@
+                  <input class="signup_email" type='text' name="emailDns" th:field="*{emailDns}" required>
                 <select name="emailaddr" style="width: 100px; height: 32px;">
                   <option value="" selected>직접입력</option>
                   <option value="daum.net">daum.net</option>
@@ -83,23 +84,22 @@
               </label>
               <!-- 선택 영역 두번째 -->
               <!-- name을 부여함으로 인하여 radio의 선택 가능한 것들을 하나의 그룹으로 묶어준다. -->
-
                 <div>
                 <div class="signup_info_form">* 회원유형</div><br>
-                  <input type="radio" class="radio" name="userRole" th:value="'ROLE_USER'" th:checked="${userDTO.userRole == 'ROLE_USER'}" checked>&nbsp 일반 회원
-                  <input type="radio" class="radio" name="userRole" th:value="'ROLE_ADMIN'" th:checked="${userDTO.userRole == 'ROLE_ADMIN'}">&nbsp 관리자
+                  <input type="radio" class="radio" name="userRole" th:value="ROLE_USER" checked>&nbsp 일반 회원
+                  <input type="radio" class="radio" name="userRole" th:value="ROLE_ADMIN" >&nbsp 관리자
                 </div>
-              </form>
               <br>
               <br>
-              <form>
+              <div>
                 <input type="checkbox" class="agree">&nbsp 이용약관 개인정보 수집 및 정보이용에 동의합니다.
-              </form>
+              </div>
               <br>
               <button class="signup_submit">가입하기</button>
               <!-- 기능자체는 input의 타입을 button으로 하면 사용은 가능하지만, 굳이 button 태그를 사용하는 이유는 -->
               <!-- 커스터마이징이 button 태그가 더 용이하기 때문이다. -->
               <!-- <input type="button" value="가입하기"> -->
+              </form>
             </div>
           </div>
         </div>

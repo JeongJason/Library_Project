@@ -5,17 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="/css/basic.css">
-    <link rel="stylesheet" href="/css/sub_header.css">
-    <link rel="stylesheet" href="/css/sub_main.css">
-    <link rel="stylesheet" href="/css/notice.css">
-    <link rel="stylesheet" href="/css/post.css">
-    <link rel="stylesheet" href="/css/footer.css">
-  <style>
-    .contentbody{
-    border: none;
-    }
-  </style>
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/sub_header.css">
+    <link rel="stylesheet" href="css/sub_main.css">
+    <link rel="stylesheet" href="css/notice.css">
+    <link rel="stylesheet" href="css/post.css">
+    <link rel="stylesheet" href="css/footer.css">
 
 
 </head>
@@ -33,14 +28,18 @@
       <div class="header_bottom">
         <div class="hb_info">
           <div class="gnb">
-            <a href="./main.html"><img class="BeomeoLogoB1" src="/img/beomeo_logo_b.png"></a>
+            <a href="./main.html"><img class="BeomeoLogoB1" src="css/img/beomeo_logo_b.png"></a>
             <ul class="gnb_menu">
               <li><a href="./1-1search.html">자료검색</a></li>
               <li><a href="./2-1lend.html">대여안내</a></li>
               <li><a href="./3-1notice.html">열린공간</a></li>
               <li><a href="./4-1greetings.html">도서관 소개</a></li>
               <li><a href="./5-1myInfo.html">나의 도서관</a></li>
-              <li><a href=""><img src="/img/menubar.png" style="width: 35px; height: 35px; padding-top: 3px;" alt="메뉴바"></a></li>
+              <!--new start 10월 13일 메뉴바 수정-->
+              <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" style="padding-top: 6px;" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg></a></li>
+              <!--new end-->
             </ul>
           </div>
         </div>
@@ -49,52 +48,49 @@
     <div class="main_wrap">
       <div class="main_top">
         <div class="mt_index">
-          <h1>공지사항</h1>
+          <h1>도서정보</h1>
         </div>
         <div class="mt_index2">
           <ul>
-            <li class="home"><a href=""><img src="/img/navi_home_icon.gif" alt="Home"></a></li>
-            <li><a href="./3-1notice.html">열린공간</a></li>
-            <li>공지사항</li>
-            <li>도서리뷰</li>
+            <li class="home"><a href=""><img src="css/img/navi_home_icon.gif" alt="Home"></a></li>
+            <li><a href="./3-1notice.html">자료검색</a></li>
+            <li>추천도서</li>
+            <li>도서정보</li>
           </ul>
         </div>
       </div>
       <div class="main_bottom">
-          <div class="mb_info">
-<!--        <form class="mb_info"  th:action="@{/reviews/remove(revId=${reviewDTO.revId})}">-->
-          <input type ="hidden" name="revId" th:value="${reviewDTO.revId}">
+        <div class="mb_info">     
           <div class="mb_info_top">
-            <div class="mbt_t"><input class="contentbody" type="text" th:field="${reviewDTO.revTitle}" style="font-size:25px" readonly/></div>
+            <div class="mbt_t">누가 내 머리에 똥 쌌어?</div>          
           </div>
           <div class="mbt_wd">
-            <div class="mbt_w">작성자</div>
-            <div class="mbt_ww"><input class="contentbody" type="text" th:field="${reviewDTO.userId}" readonly/></div>
-            <div class="mbt_d">작성일</div>
-            <div class="mbt_dd"><input class="contentbody" type="text" th:field="${reviewDTO.revRegisterDate}" readonly/></div>
-            <div class="mbt_views">
-              <div class="mbt_v">조회수</div>
-              <div class="mbt_vv"  th:text="${reviewDTO.revViewCnt}"></div>
-            </div>
+            <div class="mbt_w">저자</div>
+            <div class="mbt_ww">name</div>
+            <div class="mbt_w">출판사</div>
+            <div class="mbt_ww">name</div>
+            <div class="mbt_w">출판년도</div>
+            <div class="mbt_ww">year</div>
+            <div class="mbt_w">청구기호</div>
+            <div class="mbt_ww">area</div>
           </div>
           <div class="mbt_file">
             <div class="mbt_f">첨부파일</div>
             <div class="mbt_ff">file</div>
           </div>
           <div class="mb_info_bottom">
-            <div class="mbb_w"><textarea class="contentbody" rows="6" style="resize:none" th:field="*{reviewDTO.revContent}" readonly></textarea></div>
+            <div class="mbb_w">책 정보를 입력해 주세요</div>
           </div>
           <div class="modifybtn">
-            <button class="mdf_btn"><a th:href="@{/reviews/3-8modify(revId=${reviewDTO.revId}, pageNum=${criteria.pageNum}, type=${search.type}, keyword=${search.keyword})}">수정</a></button>
-            <button class="mdf_btn"><a th:href="@{/reviews/remove(revId=${reviewDTO.revId}, pageNum=${criteria.pageNum}, type=${search.type}, keyword=${search.keyword})}">삭제</a></button>
-<!--            <input type="submit" value="삭제" class="mdf_btn"/>-->
-            <button class="mdf_btn"><a th:href="@{/reviews/3-2review(pageNum=${criteria.pageNum}, type=${search.type}, keyword=${search.keyword})}">목록으로 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"class="bi bi-arrow-right" viewBox="0 0 15 15">
+            <button class="mdf_btn"><a href="">수정</a></button>
+            <button class="mdf_btn"><a href="">삭제</a></button>
+            <button class="mdf_btn"><a href="./3-1notice.html">목록으로 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"class="bi bi-arrow-right" viewBox="0 0 15 15">
               <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
             </svg></a></button>
           </div>  
-<!--        </form>-->
-          </div>
+        </div>
       </div>
+    </div>
     <footer class="footer_wrap">
       <div class="footer_top">
         <div class="ft_info">

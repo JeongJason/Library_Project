@@ -39,7 +39,7 @@
                       <li class="gnb_m1"><a th:href="@{boards/notice}" title=""><span>열린공간</span></a></li>
                       <li class="gnb_m1"><a href="/greeting" title=""><span>도서관 소개</span></a></li>
                       <li class="gnb_m1"><a href="" title=""><span>나의 도서관</span></a></li>
-                      <li class="gnb_m1-1"><a href="" title="통합자료검색" ><span><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" style="padding-top: 15px;" class="bi bi-search" viewBox="0 0 16 16">
+                      <li class="gnb_m1-1"><a th:href="@{/books/1-1search}" title="통합자료검색" ><span><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" style="padding-top: 15px;" class="bi bi-search" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                       </svg><br>통합자료검색</span></a></li>
                       <li class="gnb_m2-1"><a href="/lend" title="도서대출"><span><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" style="padding-top: 15px;" class="bi bi-upc-scan" viewBox="0 0 16 16">
@@ -143,7 +143,7 @@
               </span>   
               <span class="bunch">
                 <div class="btn_write">
-                <a th:href="@{/boards/write}" style="color: white; font-size: 13px;" >글쓰기</a>
+                <a th:href="@{write}" style="color: white; font-size: 13px;" >글쓰기</a>
                 </div>
               </span>  
             </form>

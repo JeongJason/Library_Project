@@ -1,14 +1,14 @@
 package com.example.app.service;
 
-import com.example.app.domain.dto.BoardDTO;
 import com.example.app.domain.dto.ReviewDTO;
 import com.example.app.domain.dto.Search;
 import com.example.app.domain.paging.Criteria;
-import com.example.app.mapper.BoardMapper;
 import com.example.app.mapper.ReviewMapper;
+import com.example.app.repository.ReviewRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -16,10 +16,16 @@ import java.util.List;
 public class ReviewService {
 
     private final ReviewMapper reviewMapper;
+    private final ReviewRepository reviewRepository;
 
     // 리뷰 조회
+    @Transactional
     public ReviewDTO getBoard(Long revId){
-        return reviewMapper.select(revId);
+        //데이터페이스에서 게시물 조회
+        ReviewDTO reviewDTO = reviewMapper.select(revId);
+        // 조회수 증가
+        reviewRepository.incrementViewCount(revId);
+        return reviewDTO;
     }
     // 리뷰 목록
     public List<ReviewDTO> getList(Criteria criteria, Search search){
@@ -30,6 +36,7 @@ public class ReviewService {
         reviewMapper.insert(reviewDTO);
     }
     // 리뷰 삭제
+    @Transactional
     public void delete(Long revId){
         reviewMapper.delete(revId);
     }

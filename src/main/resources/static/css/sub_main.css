@@ -127,14 +127,41 @@
 
 .mb_info>.table_header1 {
   display: flex;
-  justify-content: space-between;
   border-bottom: 2px solid black;
-  margin-top: 110px;
+  margin-top: 40px;
 }
 
-fieldset {
-  max-width: 1260px;
-  border-radius: 10px;
+/* 전체 {회원수} 건 */
+.all_count {
+  line-height: 60px;
+}
+
+/* 회원 검색창 */
+.mt_search_area {
+  height: 40px;
+  margin-bottom: 20px;
+  margin: 0 160px 30px 160px;
+}
+
+/* 삭제 버튼 */
+.add_btn,
+.delete_btn {
+  width: 110px;
+  height: 40px;
+  margin-left: 10px;
+  line-height: 40px;
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: bold;
+  background-color: navy;
+}
+
+.add_btn>a,
+.delete_btn>a,
+.moreinfo_btn>a {
+  font-size: 15px;
+  color: white;
 }
 
 .s_c {
@@ -142,6 +169,18 @@ fieldset {
   gap: 5px;
   flex-wrap: nowrap;
 }
+
+.moreinfo_btn {
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: bold;
+  background-color: rgb(85, 85, 85);
+}
+
 
 .search-results {
   display: flex;

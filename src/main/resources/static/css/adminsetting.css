@@ -110,7 +110,7 @@ span.bunch {
 }
 
 input {
-    width: 300px;
+    width: 20px;
     height: 33px;
     border: 1px solid #d1d0cf;
     line-height: 2.1em;
@@ -194,9 +194,9 @@ tr {
     height: 50px;
 }
 
-.tdt {
-    width: 40%;
-}
+.tdt {}
+
+.check_b {}
 
 /* 페이징 */
 .dataTables_paginate {

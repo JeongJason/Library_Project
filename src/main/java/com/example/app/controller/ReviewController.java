@@ -25,9 +25,20 @@ public class ReviewController {
     private final ReviewService reviewService;
 
     // 게시글 조회
-    @GetMapping(value={"/3-7post","/3-8modify"})
-    public void getBoard(Search search, Criteria criteria, Long revId, Model model) {
-        model.addAttribute(reviewService.getBoard(revId));
+    @GetMapping("/3-7post")
+    public String getBoard(Search search, Criteria criteria, Long revId, Model model) {
+        // 조회수 증가를 포함한 리뷰게시물 조회
+        ReviewDTO reviewDTO = reviewService.getBoard(revId);
+        model.addAttribute(reviewDTO);
+        return "reviews/3-7post";
+    }
+    // 리뷰 수정 페이지
+    @GetMapping("/3-8modify")
+    public String getModifyPage(Search search, Criteria criteria, Long revId, Model model) {
+        // 리뷰게시물 정보 가져오기
+        ReviewDTO reviewDTO = reviewService.getBoard(revId);
+        model.addAttribute(reviewDTO);
+        return "reviews/3-8modify";
     }
 
     // 게시글 목록

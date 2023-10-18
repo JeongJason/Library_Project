@@ -10,9 +10,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -24,20 +22,20 @@ import java.util.List;
 public class BoardController {
     private final BoardService boardService;
 
-//    // 게시글 조회
+    //    // 게시글 조회
 //    @GetMapping(value={"/3-4post","/3-5modify"})
 //    public void getBoard(Search search, Criteria criteria, Long anId, Model model) {
 //        model.addAttribute(boardService.getBoard(anId));
 //    }
     // 게시글 조회
-        @GetMapping("/3-4post")
-        public String getBoard(Search search, Criteria criteria, Long anId, Model model) {
-            // 조회수 증가를 포함한 게시물 조회
-            BoardDTO boardDTO = boardService.getBoard(anId);
-            model.addAttribute("board", boardDTO);
+    @GetMapping("/3-4post")
+    public String getBoard(Search search, Criteria criteria, Long anId, Model model) {
+        // 조회수 증가를 포함한 게시물 조회
+        BoardDTO boardDTO = boardService.getBoard(anId);
+        model.addAttribute("board", boardDTO);
 
-            return "boards/3-4post";
-        }
+        return "boards/3-4post";
+    }
 
     // 게시글 수정 페이지
     @GetMapping("/3-5modify")
@@ -74,13 +72,12 @@ public class BoardController {
     @PostMapping("/write")
     public RedirectView write(BoardDTO boardDTO, RedirectAttributes redirectAttributes){
         boardService.write(boardDTO);
-        System.out.println(boardDTO);
         redirectAttributes.addFlashAttribute("anId", boardDTO.getAnId());
         return new RedirectView("/boards/notice");
     }
 
     // 게시글 삭제
-    @Transactional
+
     @GetMapping("/remove")
     public RedirectView remove(Long anId){
         boardService.delete(anId);

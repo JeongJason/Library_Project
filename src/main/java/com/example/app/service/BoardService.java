@@ -40,6 +40,7 @@ public class BoardService {
         boardMapper.insert(boardDTO);
     }
     // 게시글 삭제
+    @Transactional
     public void delete(Long anId){
         boardMapper.delete(anId);
     }

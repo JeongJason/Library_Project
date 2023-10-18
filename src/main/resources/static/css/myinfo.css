@@ -1,7 +1,7 @@
-.signup_top{
+.signup_top {
     position: relative;
     max-width: 1260px;
-    height: 100vh;
+    height: 810px;
     overflow: hidden;
 }
 
@@ -11,11 +11,11 @@
     top: 50%;
     transform: translate(-50%, -50%);
     width: 670px;
-    height: 850px;
+    height: 720px;
     background: #FFFFFF;
     border-radius: 0.5rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    margin:0px;
+    margin: 0px;
     padding: 0px 100px 0px 100px;
     box-sizing: border-box;
     display: flex;
@@ -47,12 +47,13 @@
     color: royalblue;
     border-radius: 8px;
     border: #0068FF solid 1px;
-    display: block; 
-    margin: 0 auto; 
+    display: block;
+    margin: 0 auto;
     text-align: center;
 }
 
-#signup_info, .signup_id{
+.signup_info,
+.signup_id {
     padding: 0px;
     border: none;
     border-bottom: 1px solid #CFCFCF;
@@ -76,23 +77,36 @@
 
 /* 떨리는 효과를 정의하는 CSS 애니메이션 */
 @keyframes shake {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateX(0);
     }
-    10%, 30%, 50%, 70%, 90% {
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
         transform: translateX(-5px);
     }
-    20%, 40%, 60%, 80% {
+
+    20%,
+    40%,
+    60%,
+    80% {
         transform: translateX(5px);
     }
 }
 
 /* 떨리는 효과를 적용할 클래스 */
-.shake , .error-message {
+.shake,
+.error-message {
     animation: shake 0.2s;
-  }
+}
 
-.signup_pwd, .signup_pwd-confirm{
+.signup_pwd,
+.signup_pwd-confirm {
     padding: 0px;
     border: none;
     border-bottom: 1px solid #CFCFCF;
@@ -100,7 +114,8 @@
     height: 30px;
 }
 
-#signup_email, #signup_email_prefix{
+.signup_email,
+.signup_email_prefix {
     padding: 0px;
     border: none;
     border-bottom: 1px solid #CFCFCF;
@@ -109,12 +124,12 @@
     text-align: center;
 }
 
-#email_domain{
-    width: 100px; 
+#email_domain {
+    width: 100px;
     height: 30px;
 }
 
-#signup_age{
+#signup_age {
     padding: 0px;
     border: none;
     border-bottom: 1px solid #CFCFCF;
@@ -128,16 +143,16 @@
     margin: 0px 0px 15px 0px;
 }
 
-.signup_info_form2{
+.signup_info_form2 {
     display: flex;
-    justify-content: center
-    ;
+    justify-content: center;
 }
-.signup_domain_form{
+
+.signup_domain_form {
     margin-left: 10px;
 }
 
-#email_domain{
+#email_domain {
     text-align: center;
 }
 
@@ -156,7 +171,7 @@ input.agree {
     height: 15px;
 }
 
-.birth_form{
+.birth_form {
     display: flex;
     justify-content: space-evenly;
     margin-top: 10px;
@@ -164,11 +179,12 @@ input.agree {
 }
 
 
-#signup_year, #signup_month, #signup_day{
+#signup_year,
+#signup_month,
+#signup_day {
     width: 90px;
     height: 30px;
     margin: 0 auto;
     font-size: 15px;
     text-align: center;
 }
-
