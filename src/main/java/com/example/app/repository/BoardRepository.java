@@ -14,4 +14,5 @@ import org.springframework.stereotype.Repository;
     @Query("UPDATE Board b SET b.anViewCnt = b.anViewCnt + 1 WHERE b.anId = :anId")
 //    void incrementViewCount(@Param("anId") Long anId);
     int incrementViewCount(Long anId);
+
 }

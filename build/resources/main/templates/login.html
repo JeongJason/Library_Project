@@ -20,17 +20,17 @@
       <div class="header_top">
         <div class="ht_info">
           <div class="tnb_menu">
-            <a href="./login.html">로그인</a>
-            <a href="./signup.html">회원가입</a>
+            <a th:href="@{/login}">로그인</a>
+            <a th:href="@{/register}">회원가입</a>
           </div>
         </div>
       </div>
       <div class="header_bottom">
         <div class="hb_info">
           <div class="gnb">
-            <a href="./main.html"><img class="BeomeoLogoB1" src=" /img/beomeo_logo_b.png"></a>
+            <a href="/main"><img class="BeomeoLogoB1" src=" /img/beomeo_logo_b.png"></a>
             <ul class="gnb_menu">
-              <li><a href="./1-1search.html">자료검색</a></li>
+              <li><a href="books/1-1search.html">자료검색</a></li>
               <li><a href="./2-1lend.html">대여안내</a></li>
               <li><a href="boards/notice.html">열린공간</a></li>
               <li><a href="./4-1greetings.html">도서관 소개</a></li>
@@ -52,7 +52,7 @@
             <form class="form">
               <p class="form-title">로그인</p>
               <div class="input-container">
-                <input type="email" placeholder="아이디를 입력해주세요">
+                <input type="text" placeholder="아이디를 입력해주세요">
                   <span>
                   </span>
               </div>

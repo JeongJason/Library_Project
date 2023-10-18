@@ -61,7 +61,8 @@
         </div>
       </div>
       <div class="main_bottom">
-        <form class="mb_info"  th:action="@{/boards/remove(anId=${board.anId})}">
+          <div class="mb_info">
+<!--        <form class="mb_info"  th:action="@{/boards/remove(anId=${board.anId})}" >-->
           <input type ="hidden" name="anId" th:value="${board.anId}">
           <div class="mb_info_top">
             <div class="mbt_t"><input class="contentbody" type="text" th:field="${board.anTitle}" style="font-size:25px" readonly/></div>
@@ -85,12 +86,17 @@
           </div>
           <div class="modifybtn">
             <button class="mdf_btn"><a th:href="@{/boards/3-5modify(anId=${board.anId}, pageNum=${criteria.pageNum}, type=${search.type}, keyword=${search.keyword})}">수정</a></button>
-            <input type="submit" value="삭제" class="mdf_btn"/>
+
+            <button class="mdf_btn"><a th:href="@{/boards/remove(anId=${board.anId}, pageNum=${criteria.pageNum}, type=${search.type}, keyword=${search.keyword})}">삭제</a></button>
+<!--            <input type="submit" value="삭제" class="mdf_btn"/>-->
             <button class="mdf_btn"><a th:href="@{/boards/notice(pageNum=${criteria.pageNum}, type=${search.type}, keyword=${search.keyword})}">목록으로 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"class="bi bi-arrow-right" viewBox="0 0 15 15">
               <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
             </svg></a></button>
-          </div>  
-        </form>
+          </div>
+<!--        </form>-->
+          </div>
+
+
       </div>
     <footer class="footer_wrap">
       <div class="footer_top">

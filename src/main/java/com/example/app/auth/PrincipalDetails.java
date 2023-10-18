@@ -15,71 +15,73 @@ import java.util.Map;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PrincipalDetails implements UserDetails, OAuth2User {
+public class PrincipalDetails implements UserDetails {
 
-    private UserDTO userDTO;
+    private UserDTO dto;
 
-    private Map<String, Object> attributes;
-    private String accessToken;
+    //user에 대한 getter 메소드 추가
+    public void setDto(UserDTO dto) { this.dto = dto; }
 
-    public PrincipalDetails(UserDTO userDTO) {
+    public String getUserId() { return dto.getUserId(); }
+
+    public String getUserPw() { return dto.getUserPw(); }
+
+    public String getActualUserName() { return dto.getUserName(); }
+
+    public String getUserEmail() {
+        return dto.getUserEmail();
     }
 
-    @Override
-    public Map<String, Object> getAttributes() {
-        return attributes;
-    }
-
-    @Override
-    public String getName() {
-        return null;
+    public String getUserBirth() {
+        return dto.getUserBirth();
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        Collection<GrantedAuthority> collection = new ArrayList();
+
+        Collection<GrantedAuthority> collection = new ArrayList<>();
 
         collection.add(new GrantedAuthority(){
             @Override
             public String getAuthority() {
-                return userDTO.getUserRole();
+                if(dto.getUserRole() == "ROLE_USER")
+                    return "ROLE_USER";
+                else
+                    return "ROLE_ADMIN";
             }
         } );
+
         return collection;
+
     }
 
     @Override
     public String getPassword() {
-        return userDTO.getUserPw();
+        return dto.getUserPw();
     }
 
     @Override
     public String getUsername() {
-        // TODO Auto-generated method stub
-        return userDTO.getUserId();
+        return dto.getUserId();
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        // TODO Auto-generated method stub
         return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        // TODO Auto-generated method stub
         return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        // TODO Auto-generated method stub
         return true;
     }
 
     @Override
     public boolean isEnabled() {
-        // TODO Auto-generated method stub
         return true;
     }
 }

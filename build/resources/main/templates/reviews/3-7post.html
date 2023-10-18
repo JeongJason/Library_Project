@@ -61,19 +61,20 @@
         </div>
       </div>
       <div class="main_bottom">
-        <form class="mb_info"  th:action="@{/reviews/remove(revId=${reviewDTO.revId})}">
+          <div class="mb_info">
+<!--        <form class="mb_info"  th:action="@{/reviews/remove(revId=${reviewDTO.revId})}">-->
           <input type ="hidden" name="revId" th:value="${reviewDTO.revId}">
           <div class="mb_info_top">
             <div class="mbt_t"><input class="contentbody" type="text" th:field="${reviewDTO.revTitle}" style="font-size:25px" readonly/></div>
           </div>
           <div class="mbt_wd">
             <div class="mbt_w">작성자</div>
-            <div class="mbt_ww"><input class="contentbody" type="text" th:field="*{reviewDTO.userId}" readonly/></div>
+            <div class="mbt_ww"><input class="contentbody" type="text" th:field="${reviewDTO.userId}" readonly/></div>
             <div class="mbt_d">작성일</div>
-            <div class="mbt_dd"><input class="contentbody" type="text" th:field="*{reviewDTO.revRegisterDate}" readonly/></div>
+            <div class="mbt_dd"><input class="contentbody" type="text" th:field="${reviewDTO.revRegisterDate}" readonly/></div>
             <div class="mbt_views">
               <div class="mbt_v">조회수</div>
-              <div class="mbt_vv">1</div>
+              <div class="mbt_vv"  th:text="${reviewDTO.revViewCnt}"></div>
             </div>
           </div>
           <div class="mbt_file">
@@ -85,12 +86,14 @@
           </div>
           <div class="modifybtn">
             <button class="mdf_btn"><a th:href="@{/reviews/3-8modify(revId=${reviewDTO.revId}, pageNum=${criteria.pageNum}, type=${search.type}, keyword=${search.keyword})}">수정</a></button>
-            <input type="submit" value="삭제" class="mdf_btn"/>
+            <button class="mdf_btn"><a th:href="@{/reviews/remove(revId=${reviewDTO.revId}, pageNum=${criteria.pageNum}, type=${search.type}, keyword=${search.keyword})}">삭제</a></button>
+<!--            <input type="submit" value="삭제" class="mdf_btn"/>-->
             <button class="mdf_btn"><a th:href="@{/reviews/3-2review(pageNum=${criteria.pageNum}, type=${search.type}, keyword=${search.keyword})}">목록으로 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"class="bi bi-arrow-right" viewBox="0 0 15 15">
               <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
             </svg></a></button>
           </div>  
-        </form>
+<!--        </form>-->
+          </div>
       </div>
     <footer class="footer_wrap">
       <div class="footer_top">

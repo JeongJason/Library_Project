@@ -6,5 +6,6 @@
         <typeAlias type="com.example.app.domain.dto.BoardDTO" alias="boardDTO"></typeAlias>
         <typeAlias type="com.example.app.domain.dto.UserDTO" alias="userDTO"></typeAlias>
         <typeAlias type="com.example.app.domain.dto.ReviewDTO" alias="reviewDTO"></typeAlias>
+        <typeAlias type="com.example.app.domain.dto.WishDTO" alias="wishDTO"></typeAlias>
     </typeAliases>
 </configuration>

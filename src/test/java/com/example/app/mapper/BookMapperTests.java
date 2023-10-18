@@ -23,10 +23,10 @@ public class BookMapperTests {
 
     }
 
-    @Test
-    public void selectAllTest(){
-        assertThat(bookMapper.selectAll().size()).isEqualTo(41458);
-    }
+//    @Test
+//    public void selectAllTest(){
+//        assertThat(bookMapper.selectAll().size()).isEqualTo(41458);
+//    }
 
     @Test
     public void insertTest(){

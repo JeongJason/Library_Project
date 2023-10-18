@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/basic.css">
+    <link rel="stylesheet" href="/css/sub_header.css">
+    <link rel="stylesheet" href="/css/sub_main.css">
+    <link rel="stylesheet" href="/css/notice.css">
+    <link rel="stylesheet" href="/css/hopebook.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header_wrap">
+            <div class="header_top">
+                <div class="ht_info">
+                    <div class="tnb_menu">
+                        <a href="../login.html">로그인</a>
+                        <a href="../signup.html">회원가입</a>
+                    </div>
+                </div>
+            </div>
+            <div class="header_bottom">
+                <div class="hb_info">
+                    <div class="gnb">
+                        <a href="../main.html"><img class="BeomeoLogoB1" src=" /img/beomeo_logo_b.png"></a>
+                        <ul class="gnb_menu">
+                            <li><a href="../1-1search.html">자료검색</a></li>
+                            <li><a href="../2-1lend.html">대여안내</a></li>
+                            <li><a href="notice.html">열린공간</a></li>
+                            <li><a href="../4-1greetings.html">도서관 소개</a></li>
+                            <li><a href="../5-1myInfo.html">나의 도서관</a></li>
+                            <li><a href=""><img src=" /img/menubar.png" style="width: 35px; height: 35px; padding-top: 3px;"
+                                                alt="메뉴바"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="main_wrap">
+            <div class="main_top">
+                <div class="mt_index">
+                    <h1>희망도서신청</h1>
+                </div>
+                <div class="mt_index2">
+                    <ul>
+                        <li class="home"><a href=""><img src="css/img/navi_home_icon.gif" alt="Home"></a></li>
+                        <li><a href="./1-1search.html">자료검색</a></li>
+                        <li>희망도서신청</li>
+                    </ul>
+                </div>
+                <div class="mt_info">
+                    <ul class="mt_menu">
+                        <li class="mt_m"><a href="./1-1search.html">통합자료검색</a></li>
+                        <li class="mt_m"><a href="./1-2recommend.html">추천도서</a></li>
+                        <li class="mt_m" style="background-color: navy;"><a href="./1-3hope.html" style="color: white;">희망도서신청</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main_bottom">
+                <form th:action="@{/wish}" method="post" id="wishForm">
+                <input type="hidden" name="userId" th:value="${wishDTO.userId}">
+                <input type="hidden" name="userId" th:value="${#authentication.principal.userId}">
+                    <!--                    <input type="hidden" name="userId" th:value="${#authentication.principal.getUserId()}">-->
+                <div class="mb_info">
+                    <div class="hopeadd_table">
+                        <div class="hope_title">▼ 희망도서정보를 입력해 주세요.</div>
+                        <div class="ha_tb" style="border-top: 2px solid gray;">
+                            <div class="ha_tb_title">제목</div>
+                            <div class="ha_tb_text"><input class="text_input" type="text" th:field="${wishDTO.wishTitle}"
+                                                           th:value="${wishDTO.wishTitle}"></div>
+                        </div>
+                        <div class="ha_tb">
+                            <div class="ha_tb_title">저자</div>
+                            <div class="ha_tb_text"><input class="text_input" type="text" th:field="${wishDTO.wishAuthor}">
+                            </div>
+                        </div>
+                        <div class="ha_tb">
+                            <div class="ha_tb_title">출판사</div>
+                            <div class="ha_tb_text"><input class="text_input" type="text"
+                                                           th:field="${wishDTO.wishPublisher}"></div>
+                        </div>
+                        <div class="ha_tb">
+                            <div class="ha_tb_title">출판년도</div>
+                            <div class="ha_tb_text"><input class="text_input" type="number" th:field="${wishDTO.wishYear}">
+                            </div>
+                        </div>
+                        <div class="ha_tb" style="border-bottom: 2px solid gray;">
+                            <div class="ha_tb_title">ISBN</div>
+                            <div class="ha_tb_text"><input class="text_input" type="text" th:field="${wishDTO.wishIsbn}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hopeadd_btn">
+                        <button type="submit" class="ha_btn">신청하기</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        <footer class="footer_wrap">
+            <div class="footer_top">
+                <div class="ft_info">
+                    <div class="ft_menu">
+                        <div><a href="">개인정보처리방침</a></div>
+                        <div><a href="">영상정보처리방침</a></div>
+                        <div><a href="">이용약관</a></div>
+                        <div><a href="">도서관서비스헌장</a></div>
+                        <div><a href="">저작권보호정책</a></div>
+                        <div><a href="">뷰어다운로드</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="fb_info">
+                    <p> 대구 수성구 달구벌대로 2451 (범어동, 범어도서관) 전화 053-668-1600 팩스 053-668-1609<br/>Copyright ⓒ 수성구립 범어도서관. All
+                        rights
+                        reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+<script>
+    document.getElementById('wishForm').addEventListener('submit', function (e) {
+        alert('신청이 완료 되었습니다.');
+    });
+</script>
+</html>

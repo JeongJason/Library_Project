@@ -12,4 +12,7 @@ public class ReviewDTO {
     private String revContent;
     private String revRegisterDate;
     private String revUpdateDate;
+
+    // 조회수
+    private int revViewCnt;
 }

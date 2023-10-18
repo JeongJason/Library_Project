@@ -51,6 +51,16 @@ public class HeaderController {
         return "4-3map";
     }
 
+//    5-* 페이지 이동
+    @GetMapping("/myInfo")
+    public String myInfo(){
+        return "5-1myInfo";
+    }
+    @GetMapping("/adminsetting")
+    public String adminsettingPage(){
+        return "5-3adminsetting";
+    }
+
 
 
 }

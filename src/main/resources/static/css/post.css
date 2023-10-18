@@ -79,8 +79,27 @@
     color: white;
     font-weight: bold;
 }
-
+.mdf_btn2 {
+    position: absolute;
+    width: 110px;
+    height: 40px;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 585px;
+    border: none;
+    border-radius: 30px;
+    background-color: navy;
+    color: white;
+    font-weight: bold;
+    margin-top: -90px;
+}
+.mdf_btn2>a,
 .mdf_btn>a {
     color: white;
     font-weight: bold;
+}
+
+.main_bottom{
+    display: flex;
+    justify-content: space-between;
 }

@@ -108,6 +108,8 @@
     line-height: 30px;
 }
 
+.gnb_m5-3 {}
+
 /* 하위메뉴- 사각형 선 */
 .gnb_m1-1,
 .gnb_m1-2,
@@ -121,7 +123,8 @@
 .gnb_m4-2,
 .gnb_m4-3,
 .gnb_m5-1,
-.gnb_m5-2 {
+.gnb_m5-2,
+.gnb_m5-3 {
     border: 4px solid rgba(255, 255, 255, 0%);
     border-radius: 25px;
     /* 사각형 안에 백그라운드 색상 */
@@ -141,7 +144,8 @@
 .gnb_m4-2>a,
 .gnb_m4-3>a,
 .gnb_m5-1>a,
-.gnb_m5-2>a {
+.gnb_m5-2>a,
+.gnb_m5-3>a {
     color: rgba(60, 60, 60, 1);
 }
 
@@ -168,7 +172,8 @@
 .gnb_m4-2:hover,
 .gnb_m4-3:hover,
 .gnb_m5-1:hover,
-.gnb_m5-2:hover {
+.gnb_m5-2:hover,
+.gnb_m5-3:hover {
     background-color: rgba(40, 40, 40, 0.8);
 }
 
@@ -185,6 +190,7 @@
 .gnb_m4-2>a:hover,
 .gnb_m4-3>a:hover,
 .gnb_m5-1>a:hover,
-.gnb_m5-2>a:hover {
+.gnb_m5-2>a:hover,
+.gnb_m5-3>a:hover {
     color: white;
 }
