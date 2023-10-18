@@ -20,7 +20,7 @@
 
     <update id="update">
         UPDATE TBL_USER
-        SET USER_EMAIL = #{userEmail}
+        SET USER_EMAIL = #{userEmail}, EMAIL_PREFIX = #{emailPrefix}, EMAIL_DNS = #{emailDns}
         WHERE USER_ID = #{userId}
     </update>
 </mapper>

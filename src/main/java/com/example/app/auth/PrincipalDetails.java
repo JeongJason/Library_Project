@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
@@ -59,6 +60,15 @@ public class PrincipalDetails implements UserDetails {
         } );
 
         return collection;
+//        Collection<GrantedAuthority> authorities = new ArrayList<>();
+//
+//        if ("ROLE_USER".equals(dto.getUserRole())) {
+//            authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
+//        } else {
+//            authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+//        }
+//
+//        return authorities;
 
     }
 

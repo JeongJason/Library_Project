@@ -6,6 +6,7 @@ import com.example.app.domain.dto.UserDTO;
 import com.example.app.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -56,11 +57,14 @@ public class UserController {
     }
 
     @PostMapping("/modify")
-    public RedirectView modify(Principal principal, RedirectAttributes redirectAttributes, UserDTO userDTO){
-        PrincipalDetails principalDetails = (PrincipalDetails)principal;
+    public RedirectView modify(Authentication authentication, RedirectAttributes redirectAttributes, UserDTO userDTO){
+        PrincipalDetails principalDetails = (PrincipalDetails)authentication.getPrincipal();
         String prefix = userDTO.getEmailPrefix();
         String dns = userDTO.getEmailDns();
         String email = prefix + "@" + dns;
+        userDTO.setUserEmail(email);
+        userDTO.setUserRole(principalDetails.getDto().getUserRole());
+        userDTO.setUserRegisterDate(principalDetails.getDto().getUserRegisterDate());
         userService.modify(userDTO);
         principalDetails.setDto(userDTO);
         redirectAttributes.addAttribute("userId", userDTO.getUserId());

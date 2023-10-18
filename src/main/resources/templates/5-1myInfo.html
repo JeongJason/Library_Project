@@ -92,7 +92,6 @@
                   <div class="singup_email_form">
                     <input class="signup_email" type="text" name="emailPrefix" th:value="*{emailPrefix}" > @ <input class="signup_email_prefix" type="text"
                       name="emailDns" th:value="*{emailDns}" >
-                    <input type="hidden" name="userEmail" th:value="*{userEmail}">
                   </div>
                   <div class="signup_domain_form">
                     <select id="email_domain" name="email_domain">
@@ -112,7 +111,8 @@
                 <input type="checkbox" class="agree">&nbsp 이용약관 개인정보 수집 및 정보이용에 동의합니다.
               </div>
               <br>
-              <button class="signup_submit">수정하기</button>
+              <button type="submit" class="signup_submit">수정하기</button>
+              </div>
               </form>
             </div>
           </div>
