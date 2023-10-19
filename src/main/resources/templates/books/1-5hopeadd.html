@@ -22,8 +22,8 @@
             <div class="header_top">
                 <div class="ht_info">
                     <div class="tnb_menu">
-                        <a href="../login.html">로그인</a>
-                        <a href="../signup.html">회원가입</a>
+                        <a href="../security/login.html">로그인</a>
+                        <a href="../security/signup.html">회원가입</a>
                     </div>
                 </div>
             </div>
@@ -52,22 +52,22 @@
                 <div class="mt_index2">
                     <ul>
                         <li class="home"><a href=""><img src="css/img/navi_home_icon.gif" alt="Home"></a></li>
-                        <li><a href="./1-1search.html">자료검색</a></li>
+                        <li><a href="../1-1search.html">자료검색</a></li>
                         <li>희망도서신청</li>
                     </ul>
                 </div>
                 <div class="mt_info">
                     <ul class="mt_menu">
-                        <li class="mt_m"><a href="./1-1search.html">통합자료검색</a></li>
-                        <li class="mt_m"><a href="./1-2recommend.html">추천도서</a></li>
-                        <li class="mt_m" style="background-color: navy;"><a href="./1-3hope.html" style="color: white;">희망도서신청</a>
+                        <li class="mt_m"><a href="../1-1search.html">통합자료검색</a></li>
+                        <li class="mt_m"><a href="1-2recommend.html">추천도서</a></li>
+                        <li class="mt_m" style="background-color: navy;"><a href="1-3hope.html" style="color: white;">희망도서신청</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="main_bottom">
                 <form th:action="@{/wish}" method="post" id="wishForm">
-                <input type="hidden" name="userId" th:value="${wishDTO.userId}">
+                <input type="hidden" name="userId" th:value="${userDTO.userId}">
 <!--                <input type="hidden" name="userId" th:value="${#authentication.principal.userId}">-->
                     <!--                    <input type="hidden" name="userId" th:value="${#authentication.principal.getUserId()}">-->
                 <div class="mb_info">

@@ -21,7 +21,7 @@
               <div class="ht_info">
                   <div class="tnb_menu">
                       <a th:href="@{/login}">로그인</a>
-                      <a href="./signup.html">회원가입</a>
+                      <a href="../security/signup.html">회원가입</a>
                   </div>
               </div>
           </div>
@@ -92,7 +92,7 @@
                           <li><a href="/lend">대여안내</a></li>
                           <li><a th:href="@{boards/notice}">열린공간</a></li>
                           <li><a href="/greeting">도서관 소개</a></li>
-                          <li><a href="./5-1myInfo.html">나의 도서관</a></li>
+                          <li><a href="../5-1myInfo.html">나의 도서관</a></li>
                           <!--new start 10월 13일 메뉴바 수정-->
                           <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" style="padding-top: 6px;" class="bi bi-list" viewBox="0 0 16 16">
                               <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
@@ -107,20 +107,20 @@
     <div class="main_wrap">
       <div class="main_top">
         <div class="mt_index">
-          <h1>이용시간</h1>
+          <h1>찾아오시는 길</h1>
         </div>
         <div class="mt_index2">
           <ul>
             <li class="home"><a href=""><img src=" /img/navi_home_icon.gif" alt="Home"></a></li>
-            <li><a href="./4-1greetings.html">도서관 소개</a></li>
-            <li>이용시간</li>
+            <li><a href="4-1greetings.html">도서관 소개</a></li>
+            <li>찾아오시는 길</li>
           </ul>
         </div>
         <div class="mt_info">
           <ul class="mt_menu">
-            <li class="mt_m"><a href="./4-1greetings.html">인사말</a></li>
-            <li class="mt_m" style="background-color: navy;"><a href="./4-2time.html" style="color: white">이용시간</a></li>
-            <li class="mt_m"><a href="./4-3map.html">찾아오시는 길</a></li>
+            <li class="mt_m"><a href="4-1greetings.html">인사말</a></li>
+            <li class="mt_m"><a href="4-2time.html">이용시간</a></li>
+            <li class="mt_m" style="background-color: navy;"><a href="4-3map.html" style="color: white">찾아오시는 길</a></li>
           </ul>
         </div>
       </div>
@@ -128,38 +128,58 @@
         <div class="mb_info">
           <div class="content">
             <div class="doc">
-                <div class="doc-body con113" id="contentArea">
+                <div class="doc-body con43" id="contentArea">
                     <div class="body">
-
+                        <h3>지도</h3>
                         <!-- 게시판 메인 부분 -->
-                        <div class="doc-body">
-                            <h3>이용시간</h3>
-                            <div class="time_box">
-                                <ul>
-                                    <li class="book13 mb10">
-                                        <div>
-                                            <span>평일 09:00 ~ 18:00</span>
-                                        </div>
+                        <div class="mapWrap">
+                            <div class="map1"
+                                style="width: 100%; height: 500px; background: url(./ /img/그림1.png); background-size: cover;border: 1px solid gray; border-radius: 15px;">
+                            </div>
+                            <div class="doc-body">
+                                <div class="info_box"
+                                    style="border: 1px solid gray; border-radius: 15px; margin-top: 5px;">
+                                    <p class="info_add">경상북도 경산시 옥곡동 751-83</p>
+                                    <p class="info_tel">Tel : 053-123-4560</p>
+                                    <p class="info_fax">Fax : 053-123-4568</p>
+                                </div>
+                                <h3>교통편 안내</h3>
+                                <h4>주변 버스 노선</h4>
+                                <ul class="bus_list">
+                                    <li>
+                                        <a href="">
+                                            <span class="ico_bus_m">
+                                                "일반"
+                                                <span class="num">918</span>
+                                            </span>
+                                        </a>
                                     </li>
-                                    <li class="book11 mb10">
-                                        <div>
-                                            <span>주말 09:00 ~ 17:00</span>
-                                        </div>
+                                    <li>
+                                        <a href="">
+                                            <span class="ico_bus_m">
+                                                "일반"
+                                                <span class="num">809</span>
+                                            </span>
+                                        </a>
                                     </li>
-                                    <li class="book08" style="width: 100%;">
-                                        <div>
-                                            <span class="month_info">이번달 휴관일은</span>
-                                            <ul class="close_day">
-                                                <li>2,</li>
-                                                <li>9,</li>
-                                                <li>16,</li>
-                                                <li>23</li>
-                                            </ul>
-                                            <span>일 입니다.</span>
-                                            <p>일요일과 공휴일은 휴관입니다.</p>
-                                        </div>
+                                    <li>
+                                        <a href="">
+                                            <span class="ico_bus_m">
+                                                "일반"
+                                                <span class="num">939</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <span class="ico_bus_m">
+                                                "일반"
+                                                <span class="num">100-1</span>
+                                            </span>
+                                        </a>
                                     </li>
                                 </ul>
+
                             </div>
                         </div>
                         <div id="menuRatingDiv"></div>

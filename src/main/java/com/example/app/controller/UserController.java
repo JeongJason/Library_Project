@@ -20,6 +20,7 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
+@RequestMapping("/mypage/*")
 public class UserController {
     private final UserService userService;
     private final PasswordEncoder passwordEncoder;
