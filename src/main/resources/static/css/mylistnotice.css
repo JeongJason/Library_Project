@@ -95,6 +95,12 @@ i {
     margin-top: 30px;
 }
 
+.mb_info>.table_header1 {
+    display: flex;
+    border-bottom: 2px solid black;
+    margin-top: 70px;
+}
+
 span.bunch {
     display: inline-block;
     vertical-align: middle;
@@ -110,7 +116,7 @@ span.bunch {
 }
 
 input {
-    width: 300px;
+    width: 40px;
     height: 33px;
     border: 1px solid #d1d0cf;
     line-height: 2.1em;
@@ -179,7 +185,7 @@ thead {
     display: table-header-group;
     vertical-align: middle;
     border-color: inherit;
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(240, 240, 240);
 }
 
 tbody {
@@ -196,7 +202,7 @@ tr {
 }
 
 .tdt {
-    width: 40%;
+    width: 25%;
 }
 
 /* 페이징 */

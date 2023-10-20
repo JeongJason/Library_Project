@@ -27,5 +27,10 @@ public interface UserMapper {
     // 회원 정보 수정
     public void update(UserDTO userDTO);
 
+    //비밀번호 조회
+    public String findPW(String userId);
+    // 비밀번호 변경
+    public void updatePW(String userId, String userPw);
+
 
 }

@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
-  <link rel="stylesheet" href="css/basic.css">
-  <link rel="stylesheet" href="css/sub_header.css">
-  <link rel="stylesheet" href="css/sub_main.css">
-  <link rel="stylesheet" href="css/notice.css">
-  <link rel="stylesheet" href="css/login.css">
-  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="/css/basic.css">
+  <link rel="stylesheet" href="/css/sub_header.css">
+  <link rel="stylesheet" href="/css/sub_main.css">
+  <link rel="stylesheet" href="/css/notice.css">
+  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="/css/footer.css">
 
 
 </head>
@@ -164,7 +164,7 @@
     <div class="main_bottom">
       <div class="login_top">
         <div class=login_form>
-          <form class="form" th:action="@{/login}" method="post">
+          <form class="form" th:action="@{/security/login}" method="post">
             <p class="form-title">로그인</p>
             <div class="input-container">
               <input type="test" name="userId" id="userId" placeholder="아이디를 입력해주세요">
@@ -175,7 +175,7 @@
               <input type="password" name="userPw" id="userPw" placeholder="비밀번호를 입력해주세요">
             </div>
             <button type="submit" class="submit">로그인</button>
-            <p class="signup-link">계정이 없으신가요?  <a th:href="@{/register}">  회원가입</a></p>
+            <p class="signup-link">계정이 없으신가요?  <a th:href="@{/security/register}">  회원가입</a></p>
           </form>
         </div>
       </div>

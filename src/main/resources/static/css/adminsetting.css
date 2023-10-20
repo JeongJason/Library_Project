@@ -179,6 +179,7 @@ thead {
     display: table-header-group;
     vertical-align: middle;
     border-color: inherit;
+    background-color: rgb(240, 240, 240);
 }
 
 tbody {

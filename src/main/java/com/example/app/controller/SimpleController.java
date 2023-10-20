@@ -33,12 +33,12 @@ public class SimpleController {
 
     @GetMapping("booksPolicy/reservationPolicy")
     public String goreservationPolicy(){
-        return "/bookPolicy/2-3reservation";
+        return "/bookPolicy/2-3reserve";
     }
 
     @GetMapping("introduction/intro")
     public String gointro(){
-        return "/introduction/4-1greeting";
+        return "/introduction/4-1greetings";
     }
 
     @GetMapping("introduction/OPtime")
