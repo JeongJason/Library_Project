@@ -9,13 +9,8 @@
     <link rel="stylesheet" href="/css/sub_header.css">
     <link rel="stylesheet" href="/css/sub_main.css">
     <link rel="stylesheet" href="/css/notice.css">
-    <link rel="stylesheet" href="/css/post.css">
+    <link rel="stylesheet" href="/css/introduce.css">
     <link rel="stylesheet" href="/css/footer.css">
-  <style>
-    .contentbody{
-    border: none;
-    }
-  </style>
 
 
 </head>
@@ -168,52 +163,77 @@
     <div class="main_wrap">
       <div class="main_top">
         <div class="mt_index">
-          <h1>공지사항</h1>
+          <h1>인사말</h1>
         </div>
         <div class="mt_index2">
           <ul>
-            <li class="home"><a href="/main"><img src="/img/navi_home_icon.gif" alt="Home"></a></li>
-            <li><a href="/boards/notice">열린공간</a></li>
-            <li><a href="/boards/notice">공지사항</a></li>
-            <li>도서리뷰</li>
+            <li class="home"><a href="/main"><img src=" /img/navi_home_icon.gif" alt="Home"></a></li>
+            <li><a href="/introduction/intro">도서관 소개</a></li>
+            <li>인사말</li>
+          </ul>
+        </div>
+        <div class="mt_info">
+          <ul class="mt_menu">
+            <li class="mt_m" style="background-color: navy;"><a href="/introduction/intro" style="color: white">인사말</a></li>
+            <li class="mt_m"><a href="/introduction/OPtime">이용시간</a></li>
+            <li class="mt_m"><a href="/introduction/map">찾아오시는 길</a></li>
           </ul>
         </div>
       </div>
       <div class="main_bottom">
-          <div class="mb_info">
-<!--        <form class="mb_info"  th:action="@{/reviews/remove(revId=${reviewDTO.revId})}">-->
-          <input type ="hidden" name="revId" th:value="${reviewDTO.revId}">
-          <div class="mb_info_top">
-            <div class="mbt_t"><input class="contentbody" type="text" th:field="${reviewDTO.revTitle}" style="font-size:25px" readonly/></div>
-          </div>
-          <div class="mbt_wd">
-            <div class="mbt_w">작성자</div>
-            <div class="mbt_ww"><input class="contentbody" type="text" th:field="${reviewDTO.userId}" readonly/></div>
-            <div class="mbt_d">작성일</div>
-            <div class="mbt_dd"><input class="contentbody" type="text" th:field="${reviewDTO.revRegisterDate}" readonly/></div>
-            <div class="mbt_views">
-              <div class="mbt_v">조회수</div>
-              <div class="mbt_vv"  th:text="${reviewDTO.revViewCnt}"></div>
+        <div class="mb_info">
+          <div class="content">
+            <div class="doc">
+                <div class="doc-body con43" id="contentArea">
+                    <div class="body">
+
+                        <!-- 게시판 메인 부분 -->
+                        <div class="doc-body">
+                            <div class="greeting_box greeting_box_img">
+                                <h5>경산시립 백천도서관 홈페이지 방문을 진심으로 환영합니다.</h5>
+                                <p>책은 행복한 삶의 시작이며 삶을 풍요롭게 합니다.</p>
+                            </div>
+                            <div class="greetingTxt">
+                                <div class="greeting_sub">
+                                    <p>"안녕하십니까?"
+                                        <br>
+                                        "백천도서관에 오신 것을 진심으로 환영합니다."
+                                    </p>
+                                    <br>
+                                    <p>
+                                        "지식과 정보, 문화가 사회발전의 원동력이 되는 오늘날, 다양한 지식정보 제공과 문화 활동 및 평생학습의 장이 될 수 있도록
+                                        최선의 노력을 기울이겠습니다."
+                                    </p>
+                                    <br>
+                                    <p>경산 도심 중심에 자리 잡은 수성구립 범어도서관은 뛰어난 접근성으로 지역민 누구나 자연스럽게 도서관을 찾을 수 있는 환경을 구축하고
+                                        26만 여권의 장서와 함께 국제자료실, 범어미디어창작소, 메이커 스페이스, 스마트도서관, 북 카페, 스마트팜 등 다양한 시설을
+                                        겸비한 지역밀착형 도서관입니다.
+                                    </p>
+                                    <br>
+                                    <p>또한 백천도서관은 U-글래스의 독특한 외관과 야외광장, 분수대 그리고 옥상정원과 컬러풀광장 등 자연친화적이고 특색 있는 조경과
+                                        조형물을 장식해 도서관을 찾는 이들에게 다양한 볼거리와 휴식의 공간을 제공합니다.
+                                    </p>
+                                    <br>
+                                    <p>지역사회가 학교가 되는 ‘도서관 밖 도서관’, 10개년 계획의 범어도서관 인문학특화 프로그램인 ‘백천인문학’, 그리고 경증치매노인
+                                        대상 독서치유프로그램인 ‘경산북테라피’ 및 글로벌프로그램 등을 중점적으로 운영하고 있습니다.
+                                    </p>
+                                    <br>
+                                    <p>앞으로도 차별화된 전략으로 지역특성에 적합한 명품도서관으로 자리매김 할 것이며, 주민들의 다양한 정보욕구를 충족시키는 생활 속
+                                        문화교육 복합공간으로 거듭나게 될 것입니다.
+                                    </p>
+                                    <br>
+                                    <p>감사합니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="menuRatingDiv"></div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="mbt_file">
-            <div class="mbt_f">첨부파일</div>
-            <div class="mbt_ff">file</div>
-          </div>
-          <div class="mb_info_bottom">
-            <div class="mbb_w"><textarea class="contentbody" rows="6" style="resize:none" th:field="*{reviewDTO.revContent}" readonly></textarea></div>
-          </div>
-          <div class="modifybtn">
-            <button class="mdf_btn"><a th:href="@{/reviews/3-8modify(revId=${reviewDTO.revId}, pageNum=${criteria.pageNum}, type=${search.type}, keyword=${search.keyword})}">수정</a></button>
-            <button class="mdf_btn"><a th:href="@{/reviews/remove(revId=${reviewDTO.revId}, pageNum=${criteria.pageNum}, type=${search.type}, keyword=${search.keyword})}">삭제</a></button>
-<!--            <input type="submit" value="삭제" class="mdf_btn"/>-->
-            <button class="mdf_btn"><a th:href="@{/reviews/3-2review(pageNum=${criteria.pageNum}, type=${search.type}, keyword=${search.keyword})}">목록으로 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"class="bi bi-arrow-right" viewBox="0 0 15 15">
-              <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-            </svg></a></button>
-          </div>  
-<!--        </form>-->
-          </div>
+        </div>
+        </div>
       </div>
+    </div>
     <footer class="footer_wrap">
       <div class="footer_top">
         <div class="ft_info">

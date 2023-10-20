@@ -173,7 +173,7 @@ input.agree {
 
 .birth_form {
     display: flex;
-    justify-content: space-evenly;
+    /*justify-content: space-evenly;*/
     margin-top: 10px;
 
 }

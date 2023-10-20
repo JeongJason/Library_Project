@@ -1,10 +1,8 @@
 package com.example.app.service;
 
-import com.example.app.domain.dto.BoardDTO;
 import com.example.app.domain.dto.ReviewDTO;
 import com.example.app.domain.dto.Search;
 import com.example.app.domain.paging.Criteria;
-import com.example.app.mapper.BoardMapper;
 import com.example.app.mapper.ReviewMapper;
 import com.example.app.repository.ReviewRepository;
 import lombok.RequiredArgsConstructor;

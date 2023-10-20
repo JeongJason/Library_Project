@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
@@ -31,14 +30,14 @@ public class WishController {
     @GetMapping("/hopeadd")
     public String showwrite(Model model){
         model.addAttribute(new WishDTO());
-        return "1-5hopeadd";  /*신청페이지*/
+        return "books/1-5hopeadd";  /*신청페이지*/
     }
 
     // 도서 신청 추가
     @GetMapping("/wish")
     public String getWishForm(Model model) {
         model.addAttribute("wishDTO", new WishDTO());
-        return "1-5hopeadd";
+        return "books/1-5hopeadd";
     }
     @PostMapping("/wish")
     public RedirectView write(WishDTO wishDTO, RedirectAttributes redirectAttributes){

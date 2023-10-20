@@ -6,6 +6,8 @@ import com.example.app.domain.dto.UserDTO;
 import com.example.app.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,51 +29,46 @@ public class UserController {
         return userService.getAllUser();
     }
 
-    @GetMapping(value={"read","modify"})
-    public UserDTO getUser(Principal principal){
+    @GetMapping(value={"/read","/5-1myInfo"})
+    public UserDTO getUser(Principal principal, Model model){
+        System.out.println(principal);
+        model.addAttribute("principal", principal);
         return userService.getUser(principal.getName());
     }
 
-
-
-//    @PostMapping("/register")
-//    public String register(@RequestParam String emailPrefix, @RequestParam String emailDns, UserDTO userDTO) {
-//
-//        // Combine the two parts and set the userEmail field
-//        userDTO.setUserEmail(emailPrefix + '@' + emailDns);
-//
-//        userService.write(userDTO);
-//
-//        return "/login";
-//    }
     //    회원가입 창으로 이동
     @GetMapping("/register")
-    public String registerForm(@ModelAttribute("userDTO") UserDTO userDTO){
-
-        return "/signup";
+    public String registerForm(Model model){
+        model.addAttribute("userDTO", new UserDTO());
+        return "/security/signup";
     }
 
     @PostMapping("/register")
-    public String register(@ModelAttribute("userDTO") UserDTO userDTO, RedirectAttributes redirectAttributes) {
-        String Prefix = userDTO.getEmailPrefix();
-        String DNS = userDTO.getEmailDns();
-        String email = Prefix + "@" + DNS;
-        System.out.println(email);
-
+    public RedirectView register(UserDTO userDTO, RedirectAttributes redirectAttributes){
+        String prefix = userDTO.getEmailPrefix();
+        String dns = userDTO.getEmailDns();
+        String email = prefix + "@" + dns;
         userDTO.setUserEmail(email);
         userService.write(userDTO);
-        redirectAttributes.addFlashAttribute("userId", userDTO.getUserId());
-
-        return "/login";
+        System.out.println(userDTO);
+        redirectAttributes.addFlashAttribute("uId", userDTO.getUserId());
+//        추가후 새로고침을해도 redirect로 인해 list로 가더라도 계속 추가되지않는다.
+        return new RedirectView("/login");
     }
 
     @PostMapping("/modify")
-    public RedirectView modify(Principal principal,RedirectAttributes redirectAttributes, UserDTO userDTO){
-        PrincipalDetails principalDetails = (PrincipalDetails)principal;
-        principalDetails.setDto(userDTO);
+    public RedirectView modify(Authentication authentication, RedirectAttributes redirectAttributes, UserDTO userDTO){
+        PrincipalDetails principalDetails = (PrincipalDetails)authentication.getPrincipal();
+        String prefix = userDTO.getEmailPrefix();
+        String dns = userDTO.getEmailDns();
+        String email = prefix + "@" + dns;
+        userDTO.setUserEmail(email);
+        userDTO.setUserRole(principalDetails.getDto().getUserRole());
+        userDTO.setUserRegisterDate(principalDetails.getDto().getUserRegisterDate());
         userService.modify(userDTO);
+        principalDetails.setDto(userDTO);
         redirectAttributes.addAttribute("userId", userDTO.getUserId());
-        return new RedirectView("/user/read");
+        return new RedirectView("/5-1myInfo");
     }
 
     @GetMapping("/remove")
@@ -83,9 +80,10 @@ public class UserController {
 
     //    로그인 창으로 이동
     @GetMapping("/login")
-    public void loginForm(){
+    public String loginForm(){
+        return "/security/login";
     }
 
-
+    // 회원 탈퇴
 
 }

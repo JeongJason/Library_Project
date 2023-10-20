@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="/css/basic.css">
+  <link rel="stylesheet" href="/css/sub_header.css">
+  <link rel="stylesheet" href="/css/sub_main.css">
+  <link rel="stylesheet" href="/css/notice.css">
+  <link rel="stylesheet" href="/css/hopebook.css">
+  <link rel="stylesheet" href="/css/myinfo.css">
+  <link rel="stylesheet" href="/css/footer.css">
+
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header_wrap">
+      <div class="header_top">
+        <div class="ht_info">
+          <div class="tnb_menu">
+            <a href="../security/login.html">로그인</a>
+            <a href="../security/signup.html">회원가입</a>
+          </div>
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="hb_info">
+          <div class="gnb">
+            <a href="../main.html"><img class="BeomeoLogoB1" src="/img/beomeo_logo_b.png"></a>
+            <ul class="gnb_menu">
+              <li><a href="./1-1search.html">자료검색</a></li>
+              <li><a href="./2-1lend.html">대여안내</a></li>
+              <li><a href="./3-1notice.html">열린공간</a></li>
+              <li><a href="./4-1greetings.html">도서관 소개</a></li>
+              <li><a href="5-1myInfo.html">나의 도서관</a></li>
+              <!--new start 10월 13일 메뉴바 수정-->
+              <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
+                    style="padding-top: 6px;" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                  </svg></a></li>
+              <!--new end-->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="main_wrap">
+      <div class="main_top">
+        <div class="mt_index">
+          <h1>내 정보 수정</h1>
+        </div>
+        <div class="mt_index2">
+          <ul>
+            <li class="home"><a href=""><img src="/img/navi_home_icon.gif" alt="Home"></a></li>
+            <li><a href="5-1myInfo.html">나의 도서관</a></li>
+            <li>내 정보 수정</li>
+          </ul>
+        </div>
+        <div class="mt_info">
+          <ul class="mt_menu">
+            <li class="mt_m" style="background-color: navy;"><a href="5-1myInfo.html" style="color: white">내 정보 수정</a>
+            </li>
+            <li class="mt_m"><a href="5-2myBook.html">나의 책 계획</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="main_bottom">
+        <div class="signup_top">
+          <div class="signup_form">
+            <div class="container">
+              <form th:action="@{/modify}" method="post" th:object="${userDTO}">
+              <h2 class="signup_title"> 회원 정보 수정을 위해 입력해주세요.</h2>
+              <div class="signup_info_form" >* 아이디<br>
+                <input class="signup_id" type="text" name=userId th:value="*{userId}" readonly>
+                <span id="availabilityMessage"></span>
+              <label class="signup_info_form">* 이름<br>
+                <input class="signup_info" type="text" name="userName" th:value="*{userName}" readonly><br><br>
+              </label>
+              <div class="signup_info_form">* 생년월일</div>
+              <div class="birth_form">
+                <input class="signup_info" type="text" name="userBirth" th:value="*{userBirth}" readonly><br><br>
+              </div>
+              <br>
+              <div class="signup_info_form">* 이메일<br>
+                <div class="signup_info_form2">
+                  <div class="singup_email_form">
+                    <input class="signup_email" type="text" name="emailPrefix" th:value="*{emailPrefix}" > @ <input class="signup_email_prefix" type="text"
+                      name="emailDns" th:value="*{emailDns}" >
+                  </div>
+                  <div class="signup_domain_form">
+                    <select id="email_domain" name="email_domain">
+                      <option value="직접입력" selected>직접입력</option>
+                      <option value="daum.net">daum.net</option>
+                      <option value="empal.com">empal.com</option>
+                      <option value="gmail.com">gmail.com</option>
+                      <option value="hanmail.net">hanmail.net</option>
+                      <option value="msn.com">msn.com</option>
+                      <option value="naver.com">naver.com</option>
+                      <option value="nate.com">nate.com</option>
+                    </select><br><br>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <input type="checkbox" class="agree">&nbsp 이용약관 개인정보 수집 및 정보이용에 동의합니다.
+              </div>
+              <br>
+              <button type="submit" class="signup_submit">수정하기</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer_wrap">
+      <div class="footer_top">
+        <div class="ft_info">
+          <div class="ft_menu">
+            <div><a href="">개인정보처리방침</a></div>
+            <div><a href="">영상정보처리방침</a></div>
+            <div><a href="">이용약관</a></div>
+            <div><a href="">도서관서비스헌장</a></div>
+            <div><a href="">저작권보호정책</a></div>
+            <div><a href="">뷰어다운로드</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <div class="fb_info">
+          <p> 대구 수성구 달구벌대로 2451 (범어동, 범어도서관) 전화 053-668-1600 팩스 053-668-1609<br />Copyright ⓒ 수성구립 범어도서관. All rights
+            reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="js/signup_check_id.js"></script>
+  <script src="js/signup_pwd_eye.js"></script>
+  <script src="js/signup_check_pwd.js"></script>
+  <script src="js/birth.js"></script>
+  <script src="js/email.js"></script>
+</body>
+
+</html>

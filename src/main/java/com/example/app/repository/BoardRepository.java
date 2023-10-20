@@ -1,8 +1,6 @@
 package com.example.app.repository;
 
 import com.example.app.domain.entity.Board;
-import org.apache.ibatis.annotations.Param;
-import org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

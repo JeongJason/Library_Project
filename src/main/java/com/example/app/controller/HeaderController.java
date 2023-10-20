@@ -8,59 +8,49 @@ public class HeaderController {
 
 //    메뉴판
 //    1-* 페이지 이동
-    @GetMapping("/recommend")
-    public String recommendPage(){
-        return "1-2recommend";
-    }
-    @GetMapping("/hope")
-    public String hopePage(){
-        return "1-3hope";
-    }
-//  2-* 페이지 이동
-    @GetMapping("/lend")
-    public String searchPage(){
-        return "2-1lend";
-    }
-
-    @GetMapping("/reserve")
-    public String reservePage(){
-        return "2-3reserve";
-    }
-
-////    3-* 페이지 이동
-//    @GetMapping("/notice")
-//    public String noticePage(){
-//        return "boards/notice";
+//    @GetMapping("/recommend")
+//    public String recommendPage(){
+//        return "1-2recommend";
 //    }
-//    @GetMapping("/review")
-//    public String reviewPage(){
-//        return "boards/3-2review";
+//    @GetMapping("/hope")
+//    public String hopePage(){
+//        return "1-3hope";
 //    }
-
-//    4-* 페이지 이동
-    @GetMapping("/greeting")
-    public String greetingPage(){
-        return "4-1greetings";
-    }
-    @GetMapping("/time")
-    public String timePage(){
-        return "4-2time";
-    }
-    @GetMapping("/map")
-    public String mapPage(){
-        return "4-3map";
-    }
-
-//    5-* 페이지 이동
-    @GetMapping("/myInfo")
-    public String myInfo(){
-        return "5-1myInfo";
-    }
-    @GetMapping("/adminsetting")
-    public String adminsettingPage(){
-        return "5-3adminsetting";
-    }
-
+////  2-* 페이지 이동
+//    @GetMapping("/lend")
+//    public String searchPage(){
+//        return "2-1lend";
+//    }
+//
+//    @GetMapping("/reserve")
+//    public String reservePage(){
+//        return "2-3reserve";
+//    }
+//
+//////    3-* 페이지 이동
+////    @GetMapping("/notice")
+////    public String noticePage(){
+////        return "boards/notice";
+////    }
+////    @GetMapping("/review")
+////    public String reviewPage(){
+////        return "boards/3-2review";
+////    }
+//
+////    4-* 페이지 이동
+//    @GetMapping("/greeting")
+//    public String greetingPage(){
+//        return "4-1greetings";
+//    }
+//    @GetMapping("/time")
+//    public String timePage(){
+//        return "4-2time";
+//    }
+//    @GetMapping("/map")
+//    public String mapPage(){
+//        return "4-3map";
+//    }
+//
 
 
 }

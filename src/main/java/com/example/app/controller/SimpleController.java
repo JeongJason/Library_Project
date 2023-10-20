@@ -11,4 +11,49 @@ public class SimpleController {
         return "main";
     }
 
+    @GetMapping("books/recommendBook")
+    public String goRecommend(){
+        return "/books/1-2recommend";
+    }
+
+    @GetMapping("books/wishBook")
+    public String gowishBook(){
+        return "/books/1-3hope";
+    }
+
+    @GetMapping("booksPolicy/lendPolicy")
+    public String golendPolicy(){
+        return "/bookPolicy/2-1lend";
+    }
+
+    @GetMapping("booksPolicy/returnPolicy")
+    public String goreturnPolicy(){
+        return "/bookPolicy/2-2return";
+    }
+
+    @GetMapping("booksPolicy/reservationPolicy")
+    public String goreservationPolicy(){
+        return "/bookPolicy/2-3reservation";
+    }
+
+    @GetMapping("introduction/intro")
+    public String gointro(){
+        return "/introduction/4-1greetings";
+    }
+
+    @GetMapping("introduction/OPtime")
+    public String goOPtime(){
+        return "/introduction/4-2time";
+    }
+
+    @GetMapping("introduction/map")
+    public String goMap(){
+        return "/introduction/4-3map";
+    }
+
+    @GetMapping("mypage/mySchedule")
+    public String goMySchedule(){
+        return "/introduction/5-2myBook";
+    }
+
 }

@@ -37,12 +37,22 @@ public class BookController {
     //    도서 목록
     @GetMapping("/1-1search")
     public void showList(Search search, Criteria criteria, Model model){
-        Criteria criteriaBook = new Criteria(1, 5);
+
+//        Criteria criteriaBook = new Criteria(criteria.getPageNum(), 5);
+
+        Criteria criteriaBook;
+
+        if(criteria.getPageNum() == 1){
+            criteriaBook = new Criteria(1, 5);
+        } else {
+            criteriaBook = new Criteria(criteria.getPageNum(), 5);
+        }
         List<BookDTO> list = bookService.getList(criteriaBook, search);
         model.addAttribute("listBook", list);
         Long total = bookService.getListCount(search);
         criteriaBook.setPageNum(criteriaBook.getPageNum());
         PageMakerDTO pageMaker = new PageMakerDTO(criteriaBook, total);
+        System.out.println(criteria);
 
         Long totalPostCount = bookService.getListCount(search);
         model.addAttribute("totalPostCount", totalPostCount);

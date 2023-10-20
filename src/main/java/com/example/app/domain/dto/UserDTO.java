@@ -16,4 +16,5 @@ public class UserDTO {
     private String emailPrefix;
     private String emailDns;
     private String userEmail;
+
 }

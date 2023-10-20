@@ -15,6 +15,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 import javax.sql.DataSource;
+import java.security.Principal;
 
 @Configuration
 @EnableWebSecurity
@@ -47,7 +48,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/static/**").permitAll()
                 .antMatchers("/css/**", "/js/**", "/image/**").permitAll()
                 .antMatchers("/**").permitAll()
-//                .antMatchers("/**").permitAll()
 //                .antMatchers("/", "/member/**", "/main", "/member/join","/member/login").permitAll()
 //                .antMatchers("/admintest/**","/mainImage/**").permitAll()
 //                .antMatchers("/movielist/**").permitAll()
@@ -58,8 +58,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
 
                 .formLogin()
-                    .loginPage("/login")
-                    .loginProcessingUrl("/login")
+                    .loginPage("/security/login")
+                    .loginProcessingUrl("/security/login")
                 .successHandler(successHandler)
                 .failureHandler(failureHandler)
                 .usernameParameter("userId")

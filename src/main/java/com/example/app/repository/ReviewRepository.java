@@ -1,6 +1,5 @@
 package com.example.app.repository;
 
-import com.example.app.domain.entity.Board;
 import com.example.app.domain.entity.Review;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
