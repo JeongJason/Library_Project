@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,7 +30,7 @@ public class UserController {
         return userService.getAllUser();
     }
 
-    @GetMapping(value={"/read","/5-1myInfo"})
+    @GetMapping(value={"/mypage/read","/mypage/5-1myInfo"})
     public UserDTO getUser(Principal principal, Model model){
         System.out.println(principal);
         model.addAttribute("principal", principal);
@@ -37,13 +38,13 @@ public class UserController {
     }
 
     //    회원가입 창으로 이동
-    @GetMapping("/register")
+    @GetMapping("/security/register")
     public String registerForm(Model model){
         model.addAttribute("userDTO", new UserDTO());
         return "/security/signup";
     }
 
-    @PostMapping("/register")
+    @PostMapping("/security/register")
     public RedirectView register(UserDTO userDTO, RedirectAttributes redirectAttributes){
         String prefix = userDTO.getEmailPrefix();
         String dns = userDTO.getEmailDns();
@@ -53,10 +54,10 @@ public class UserController {
         System.out.println(userDTO);
         redirectAttributes.addFlashAttribute("uId", userDTO.getUserId());
 //        추가후 새로고침을해도 redirect로 인해 list로 가더라도 계속 추가되지않는다.
-        return new RedirectView("/login");
+        return new RedirectView("/security/login");
     }
 
-    @PostMapping("/modify")
+    @PostMapping("/mypage/modify")
     public RedirectView modify(Authentication authentication, RedirectAttributes redirectAttributes, UserDTO userDTO){
         PrincipalDetails principalDetails = (PrincipalDetails)authentication.getPrincipal();
         String prefix = userDTO.getEmailPrefix();
@@ -68,10 +69,57 @@ public class UserController {
         userService.modify(userDTO);
         principalDetails.setDto(userDTO);
         redirectAttributes.addAttribute("userId", userDTO.getUserId());
-        return new RedirectView("/5-1myInfo");
+        return new RedirectView("/mypage/5-1myInfo");
     }
 
-    @GetMapping("/remove")
+    @GetMapping("/mypage/changepw")
+    public String goChangePW(Model model){
+        return "/mypage/5-1-2passwordChange";
+    }
+
+
+
+    @PostMapping("/mypage/changepw")
+    public RedirectView changePW(@RequestParam("currentPassword") String currentPassword,
+                                 @RequestParam("newPassword") String newPassword,
+                                 @RequestParam("confirmPassword") String confirmPassword,
+                                 Principal principal,
+                                 Model model) {
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String username = principal.getName();
+        System.out.println("USERNAME : " + username);
+        String storedPassword = userService.getUserPW(username);
+        if (passwordEncoder.matches(currentPassword,storedPassword)) {
+            if (newPassword.equals(confirmPassword)) {
+                userService.updatePW(username, newPassword);
+                model.addAttribute("successMessage", "비밀번호 변경이 성공적으로 완료되었습니다.");
+            } else {
+                model.addAttribute("errorMessage", "새 비밀번호와 확인 비밀번호가 일치하지 않습니다.");
+            }
+        } else {
+            model.addAttribute("errorMessage", "현재 비밀번호가 올바르지 않습니다.");
+        }
+        return new RedirectView("/main"); // 성공 또는 에러 메시지와 함께 동일한 템플릿으로 돌아갑니다.
+    }
+
+    @GetMapping("/security/checkpw")
+    public String checkPW(@RequestParam("currentPassword") String currentPassword, Principal principal,Model model) {
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String username = principal.getName();
+        System.out.println("USERNAME : " + username);
+        String storedPassword = userService.getUserPW(username);
+        if (passwordEncoder.matches(currentPassword,storedPassword)) {
+            model.addAttribute("successMessage", "비밀번호 인증에 성공하셨습니다.");
+            return "/mypage/5-1myInfo";
+        } else {
+            model.addAttribute("errorMessage", "현재 비밀번호가 올바르지 않습니다.");
+            return "/security/checkpw";
+        }
+    }
+
+
+
+    @GetMapping("/mypage/remove")
     public RedirectView remove(Principal principal){
         String userId = principal.getName();
         userService.delete(userId);
@@ -79,11 +127,8 @@ public class UserController {
     }
 
     //    로그인 창으로 이동
-    @GetMapping("/login")
-    public String loginForm(){
-        return "/security/login";
+    @GetMapping("/security/login")
+    public void loginForm(){
     }
-
-    // 회원 탈퇴
 
 }

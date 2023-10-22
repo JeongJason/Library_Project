@@ -5,130 +5,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00ecaa23-ed90-44ec-b0e8-b4ac1e9985de" name="변경" comment="변경">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/5-3adminsetting.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/5-4adminbook.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/security/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2.1/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2.1/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/app/domain/dto/LendDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/app/mapper/LendMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/app/service/LendService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/lendMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/mylist.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/mylistnotice.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/popup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/eye-off.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/eye.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/security/checkpw.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/app/mapper/LendMapperTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries-with-intellij-classes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries-with-intellij-classes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app.test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/app/auth/PrincipalDetails$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/app/auth/PrincipalDetails$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/app/auth/PrincipalDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/app/auth/PrincipalDetails.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/app/configuration/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/app/configuration/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/app/controller/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/app/controller/BookController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/app/controller/HeaderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/app/controller/HeaderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/app/controller/SimpleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/app/controller/SimpleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/app/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/app/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/app/controller/WishController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/app/controller/WishController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/app/service/ReviewService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/app/service/ReviewService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/app/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/app/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.example.app.mapper.WishMapperTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.example.app.mapper.WishMapperTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.example.app.mapper.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.example.app.mapper.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/mapper/userMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/mapper/userMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/myinfo.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/css/myinfo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/signup_pwd_eye.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/signup_pwd_eye.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/1-2recommend.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/1-3hope.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/1-4bookinfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/1-5hopeadd.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/2-1lend.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/2-2return.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/2-3reserve.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/4-1greetings.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/4-2time.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/4-3map.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/5-1myInfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/5-2myBook.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/5-3adminsetting.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/5-4adminbook.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/boards/3-3write.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/boards/3-3write.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/boards/3-4post.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/boards/3-4post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/boards/3-5modify.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/boards/3-5modify.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/boards/notice.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/boards/notice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/editor.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/editor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/reviews/3-2review.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/reviews/3-2review.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/reviews/3-6write.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/reviews/3-6write.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/reviews/3-7post.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/reviews/3-7post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/reviews/3-8modify.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/reviews/3-8modify.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/signup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.example.app.mapper.WishMapperTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.example.app.mapper.WishMapperTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/HeaderController.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/spring-configuration-metadata.json.uniqueId1" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/spring-configuration-metadata.json.uniqueId0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/META-INF/spring-configuration-metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/config/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/config/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/mapper/boardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/mapper/boardMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/mapper/bookMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/mapper/bookMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/mapper/userMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/mapper/userMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/auth/PrincipalDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/auth/PrincipalDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/auth/exceptionhandler/CustomAccessDeniedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/auth/exceptionhandler/CustomAccessDeniedHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/auth/exceptionhandler/CustomAuthenticationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/auth/exceptionhandler/CustomAuthenticationEntryPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/auth/loginHandler/CustomAuthenticationFailureHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/auth/loginHandler/CustomAuthenticationFailureHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/auth/loginHandler/CustomAuthenticationSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/auth/loginHandler/CustomAuthenticationSuccessHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/configuration/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/controller/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/controller/HeaderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/controller/HeaderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/controller/SimpleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/controller/SimpleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/controller/WishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/controller/WishController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/domain/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/domain/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/mapper/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/mapper/BookMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/repository/BoardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/repository/BoardRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/repository/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/repository/ReviewRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/service/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/service/ReviewService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/mapper/UserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/app/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/app/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/userMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/userMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/adminsetting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/adminsetting.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/myinfo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/myinfo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/signup_pwd_eye.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/signup_pwd_eye.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/1-2recommend.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/books/1-2recommend.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/1-3hope.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/books/1-3hope.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/1-4bookinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/books/1-4bookinfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/1-5hopeadd.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/books/1-5hopeadd.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/2-1lend.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bookPolicy/2-1lend.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/2-2return.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bookPolicy/2-2return.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/2-3reserve.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bookPolicy/2-3reserve.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/4-1greetings.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/introduction/4-1greetings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/4-2time.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/introduction/4-2time.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/4-3map.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/introduction/4-3map.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/5-1myInfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/5-2myBook.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/5-3adminsetting.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/5-4adminbook.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/notice.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/notice.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/post.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/post.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/boards/3-3write.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/boards/3-3write.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/boards/3-4post.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/boards/3-4post.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/boards/3-5modify.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/boards/3-5modify.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/boards/notice.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/boards/notice.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bookPolicy/2-1lend.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bookPolicy/2-1lend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bookPolicy/2-2return.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bookPolicy/2-2return.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bookPolicy/2-3reserve.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bookPolicy/2-3reserve.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/books/1-1search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/books/1-1search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/books/1-2recommend.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/books/1-2recommend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/books/1-3hope.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/books/1-3hope.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/books/1-4bookinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/books/1-4bookinfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/books/1-5hopeadd.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/books/1-5hopeadd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/introduction/4-1greetings.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/introduction/4-1greetings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/introduction/4-2time.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/introduction/4-2time.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/introduction/4-3map.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/introduction/4-3map.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/mypage/5-1-2passwordChange.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/5-1-2passwordChange.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/mypage/5-1myInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/5-1myInfo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/reviews/3-2review.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/reviews/3-2review.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/reviews/3-6write.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/reviews/3-6write.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/reviews/3-7post.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/reviews/3-7post.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/reviews/3-8modify.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/reviews/3-8modify.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/security/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/app/mapper/WishMapperTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/app/mapper/WishMapperTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/security/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/security/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/security/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/security/signup.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,6 +90,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Interface" />
+        <option value="package-info" />
         <option value="Class" />
       </list>
     </option>
@@ -178,21 +111,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "daeun",
-    "last_opened_file_path": "C:/Users/PC/Desktop/Library/Library_Project/src/main/resources/templates/admin"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;daeun&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/PC/Desktop/Library/Library_Project/src/main/resources/templates&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\PC\Desktop\Library\Library_Project\src\main\resources\templates" />
       <recent name="C:\Users\PC\Desktop\Library\Library_Project\src\main\resources\templates\admin" />
       <recent name="C:\Users\PC\Desktop\Library\Library_Project\src\main\resources\templates\mypage" />
       <recent name="C:\Users\PC\Desktop\Library\Library_Project\src\main\resources\static" />
       <recent name="C:\Users\PC\Desktop\Library\Library_Project\src\main\resources\mapper" />
-      <recent name="C:\Users\PC\Desktop\Library\Library_Project\src\main\resources\config" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\PC\Desktop\Library\Library_Project\src\main\resources\templates\books" />
@@ -209,7 +142,7 @@
       <recent name="com.example.app.domain.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="애플리케이션.AppApplication">
+  <component name="RunManager" selected="Gradle.LendMapperTests.updateTest">
     <configuration name="AppApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.app.AppApplication" />
       <module name="app.main" />
@@ -223,7 +156,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WishMapperTests.deleteTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LendMapperTests.deleteTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -236,7 +169,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.app.mapper.WishMapperTests.deleteTest&quot;" />
+            <option value="&quot;com.example.app.mapper.LendMapperTests.deleteTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -247,7 +180,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="WishMapperTests.insertTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LendMapperTests.insertTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -260,7 +193,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.app.mapper.WishMapperTests.insertTest&quot;" />
+            <option value="&quot;com.example.app.mapper.LendMapperTests.insertTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -271,7 +204,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="WishMapperTests.selectAllTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LendMapperTests.selectTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -284,7 +217,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.app.mapper.WishMapperTests.selectAllTests&quot;" />
+            <option value="&quot;com.example.app.mapper.LendMapperTests.selectTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -295,7 +228,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="WishMapperTests.updateTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LendMapperTests.updateTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -308,7 +241,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.example.app.mapper.WishMapperTests.updateTest&quot;" />
+            <option value="&quot;com.example.app.mapper.LendMapperTests.updateTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -328,11 +261,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LendMapperTests.updateTest" />
+        <item itemvalue="Gradle.LendMapperTests.selectTest" />
+        <item itemvalue="Gradle.LendMapperTests.deleteTest" />
+        <item itemvalue="Gradle.LendMapperTests.insertTest" />
         <item itemvalue="애플리케이션.AppApplication" />
-        <item itemvalue="Gradle.WishMapperTests.deleteTest" />
-        <item itemvalue="Gradle.WishMapperTests.insertTest" />
-        <item itemvalue="Gradle.WishMapperTests.updateTest" />
-        <item itemvalue="Gradle.WishMapperTests.selectAllTests" />
       </list>
     </recent_temporary>
   </component>

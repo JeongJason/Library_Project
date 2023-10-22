@@ -54,4 +54,15 @@ public class UserService {
     public void modify(UserDTO userDTO) {
         userMapper.update(userDTO);
     }
+
+
+    // 비밀번호 조회
+    public String getUserPW(String userId){
+        return userMapper.findPW(userId);
+    }
+    // 비밀번호 변경
+    public void updatePW(String userId,String userPw){
+        String encodedPassword = passwordEncoder.encode(userPw);
+        userMapper.updatePW(userId, encodedPassword);
+    }
 }
