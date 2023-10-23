@@ -5,6 +5,7 @@ import com.example.app.domain.dto.BookDTO;
 import com.example.app.domain.dto.UserDTO;
 import com.example.app.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.apache.catalina.User;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -31,10 +32,12 @@ public class UserController {
     }
 
     @GetMapping(value={"/mypage/read","/mypage/5-1myInfo"})
-    public UserDTO getUser(Principal principal, Model model){
+    public UserDTO getUser(Authentication authentication,Principal principal, Model model){
         System.out.println(principal);
-        model.addAttribute("principal", principal);
-        return userService.getUser(principal.getName());
+        String username = principal.getName();
+        UserDTO userDTO = userService.getUser(username);
+        model.addAttribute("userDTO", userDTO);
+        return userService.getUser(username);
     }
 
     //    회원가입 창으로 이동
@@ -103,17 +106,25 @@ public class UserController {
     }
 
     @GetMapping("/security/checkpw")
+    public UserDTO goCheckPw(Model model, Principal principal) {
+        model.addAttribute("principal",principal);
+        return userService.getUser(principal.getName())
+;    }
+    @PostMapping("/security/checkpw")
     public String checkPW(@RequestParam("currentPassword") String currentPassword, Principal principal,Model model) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String username = principal.getName();
         System.out.println("USERNAME : " + username);
+        UserDTO userDTO = userService.getUser(username);
         String storedPassword = userService.getUserPW(username);
         if (passwordEncoder.matches(currentPassword,storedPassword)) {
+            model.addAttribute("userDTO",userDTO);
             model.addAttribute("successMessage", "비밀번호 인증에 성공하셨습니다.");
             return "/mypage/5-1myInfo";
         } else {
             model.addAttribute("errorMessage", "현재 비밀번호가 올바르지 않습니다.");
             return "/security/checkpw";
+
         }
     }
 

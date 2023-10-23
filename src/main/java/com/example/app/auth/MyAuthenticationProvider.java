@@ -19,9 +19,10 @@ public class MyAuthenticationProvider implements AuthenticationProvider {
         UserDetails userDetails = userDetailsService.loadUserByUsername(authentication.getName());
 
         // 여기서 userDetails로부터 필요한 사용자 정보를 가져올 수 있음
-        String username = userDetails.getUsername();
-        String email = ((PrincipalDetails) userDetails).getUserEmail();
-
+        String userId = userDetails.getUsername();
+        String userPw = userDetails.getPassword();
+        String userEmail = ((PrincipalDetails) userDetails).getUserEmail();
+        String userName = ((PrincipalDetails) userDetails).getActualUserName();
         // 로그인한 사용자 정보를 이용하여 추가 작업 수행
 
         // 인증에 성공했다고 가정하고 PrincipalDetails를 생성하여 MyAuthenticationToken에 설정

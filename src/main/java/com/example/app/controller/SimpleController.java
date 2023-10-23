@@ -53,7 +53,7 @@ public class SimpleController {
 
     @GetMapping("mypage/mySchedule")
     public String goMySchedule(){
-        return "/introduction/5-2myBook";
+        return "/mypage/5-2myBook";
     }
 
 }
