@@ -36,8 +36,8 @@
     </select>
     
     <insert id="insert">
-        INSERT INTO TBL_LEND(ISBN,USER_ID,DUE_DATE,LEND_RETURN_YN)
-        VALUES(#{isbn},#{userId},DATE_ADD(NOW(), INTERVAL 15 DAY),'N')
+        INSERT INTO TBL_LEND(ISBN,USER_ID,DUE_DATE,LEND_STATUS)
+        VALUES(#{isbn},#{userId},DATE_ADD(NOW(), INTERVAL 15 DAY),'Lend')
     </insert>
 
     <delete id="delete">

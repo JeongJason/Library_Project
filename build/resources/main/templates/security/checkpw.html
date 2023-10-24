@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
-  <link rel="stylesheet" href="css/basic.css">
-  <link rel="stylesheet" href="css/sub_header.css">
-  <link rel="stylesheet" href="css/sub_main.css">
-  <link rel="stylesheet" href="css/notice.css">
-  <link rel="stylesheet" href="css/hopebook.css">
-  <link rel="stylesheet" href="css/myinfo.css">
-  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="/css/basic.css">
+  <link rel="stylesheet" href="/css/sub_header.css">
+  <link rel="stylesheet" href="/css/sub_main.css">
+  <link rel="stylesheet" href="/css/notice.css">
+  <link rel="stylesheet" href="/css/hopebook.css">
+  <link rel="stylesheet" href="/css/myinfo.css">
+  <link rel="stylesheet" href="/css/footer.css">
 
 
 </head>
@@ -31,7 +31,7 @@
       <div class="header_bottom">
         <div class="hb_info">
           <div class="gnb">
-            <a href="./main.html"><img class="BeomeoLogoB1" src="css/img/beomeo_logo_b.png"></a>
+            <a href="/main"><img class="BeomeoLogoB1" src="/img/beomeo_logo_b.png"></a>
             <ul class="gnb_menu">
               <li><a href="./1-1search.html">자료검색</a></li>
               <li><a href="./2-1lend.html">대여안내</a></li>
@@ -57,7 +57,7 @@
         </div>
         <div class="mt_index2">
           <ul>
-            <li class="home"><a href=""><img src="css/img/navi_home_icon.gif" alt="Home"></a></li>
+            <li class="home"><a href=""><img src="/img/navi_home_icon.gif" alt="Home"></a></li>
             <li><a href="../mypage/5-1myInfo.html">나의 도서관</a></li>
             <li>마이페이지</a></li>
             <li>나의 정보 수정</li>
@@ -79,13 +79,13 @@
       <div class="main_bottom">
         <div class="mb_info">
           <div class="mb_signup_wrap">
-            <form th:action="@{/security/checkpw}" method="get">
+            <form th:action="@{/security/checkpw}" method="post">
             <div class="mb_signup_title">비밀번호 확인</div>
             <div class="mb_signup_info1" th:text="'&quot;' + ${#strings.escapeXml(principal.name)} + '&quot; 님의 회원정보를 안전하게 보호하기 위해\n비밀번호를 한번 더 확인해 주세요.'"></div>
             <div class="mb_signup_info2">
               <div class="mb_signup1">▶ 비밀번호</div>
               <input class="signup_pwd" type="password" style="width: 330px; height: 30px" name="currentPassword" id="currentPassword">
-              <img class="input__icon" src="eye.svg" alt="Toggle Password">
+              <img class="input__icon" src="/eye.svg" alt="Toggle Password">
             </div>
             <div class="mb_signup_info3">
                 <button class="mb_signup_btn" type="submit">확인</button>

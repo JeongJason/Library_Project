@@ -12,11 +12,7 @@ public class LendDTO {
     private String lendDate;
     private String dueDate;
     private String extensionCnt;
-    private String lendReturnYN;
+    private String lendStatus;
     private String lateDays;
 
-    private String bookTitle;
-    private String Author;
-    private String publisher;
-    private int pubYear;
 }
