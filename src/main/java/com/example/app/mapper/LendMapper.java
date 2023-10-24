@@ -38,7 +38,7 @@ public interface LendMapper {
     * */
 
     // 도서 연장
-    public void update(LendDTO lendDTO);
+    public void extend(String isbn, String userId);
     /*
      * public void update(@Param("userId") String userId, @Param("isbn") String isbn);
      * */

@@ -51,8 +51,8 @@ public class LendService {
      * */
 
     // 연장하기
-    public void modify(LendDTO lendDTO){
-        lendMapper.update(lendDTO);
+    public void extend(String isbn, String userId){
+        lendMapper.extend(isbn,userId);
     }/*
      * public void modify(String userId, String isbn){
      * lendMapper.update(userId, isbn);}
