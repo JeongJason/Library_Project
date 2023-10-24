@@ -53,6 +53,8 @@ public class UserController {
         String dns = userDTO.getEmailDns();
         String email = prefix + "@" + dns;
         userDTO.setUserEmail(email);
+        String encodedPassword = passwordEncoder.encode(userDTO.getUserPw());
+        userDTO.setUserPw(encodedPassword);
         userService.write(userDTO);
         System.out.println(userDTO);
         redirectAttributes.addFlashAttribute("uId", userDTO.getUserId());
@@ -94,7 +96,8 @@ public class UserController {
         String storedPassword = userService.getUserPW(username);
         if (passwordEncoder.matches(currentPassword,storedPassword)) {
             if (newPassword.equals(confirmPassword)) {
-                userService.updatePW(username, newPassword);
+                String encodedPassword = passwordEncoder.encode(newPassword);
+                userService.updatePW(username, encodedPassword);
                 model.addAttribute("successMessage", "비밀번호 변경이 성공적으로 완료되었습니다.");
             } else {
                 model.addAttribute("errorMessage", "새 비밀번호와 확인 비밀번호가 일치하지 않습니다.");

@@ -15,7 +15,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserService {
     private final UserMapper userMapper;
-    private final PasswordEncoder passwordEncoder;
 
     private boolean isAdmin(){
         return SecurityContextHolder.getContext().getAuthentication().getAuthorities()
@@ -38,9 +37,6 @@ public class UserService {
 
     // 회원 등록
     public void write(UserDTO userDTO) {
-        // 비밀번호 암호화
-        String encodedPassword = passwordEncoder.encode(userDTO.getUserPw());
-        userDTO.setUserPw(encodedPassword);
         userMapper.register(userDTO);
     }
 
@@ -62,7 +58,6 @@ public class UserService {
     }
     // 비밀번호 변경
     public void updatePW(String userId,String userPw){
-        String encodedPassword = passwordEncoder.encode(userPw);
-        userMapper.updatePW(userId, encodedPassword);
+        userMapper.updatePW(userId, userPw);
     }
 }

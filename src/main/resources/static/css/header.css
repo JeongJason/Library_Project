@@ -29,6 +29,8 @@
 
 .tnb_menu>a {
     color: white;
+    display: flex;
+    gap: 5px;
 }
 
 .header_bottom {

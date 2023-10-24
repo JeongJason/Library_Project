@@ -10,16 +10,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.sql.DataSource;
 import java.security.Principal;
 
 @Configuration
 @EnableWebSecurity
-@AllArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
@@ -58,8 +60,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
 
                 .formLogin()
-                .loginPage("/security/login")
-                .loginProcessingUrl("/security/login")
+                    .loginPage("/security/login")
+//                    .loginProcessingUrl("/security/login")
                 .successHandler(successHandler)
                 .failureHandler(failureHandler)
                 .usernameParameter("userId")
@@ -69,11 +71,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
 
                 .logout()
-                .logoutUrl("/security/logout")  /*이거 수정 member -> security*/
+                .logoutUrl("/security/logout")
                 .logoutSuccessUrl("/main")
                 .permitAll();
 
         http.csrf().disable();
+    }
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(principalDetailsService)
+                .passwordEncoder(passwordEncoder());
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
     }
 
 }
