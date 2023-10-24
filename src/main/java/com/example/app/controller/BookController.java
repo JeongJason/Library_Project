@@ -37,11 +37,7 @@ public class BookController {
     //    도서 목록
     @GetMapping("/1-1search")
     public void showList(Search search, Criteria criteria, Model model){
-
-//        Criteria criteriaBook = new Criteria(criteria.getPageNum(), 5);
-
         Criteria criteriaBook;
-
         if(criteria.getPageNum() == 1){
             criteriaBook = new Criteria(1, 5);
         } else {
