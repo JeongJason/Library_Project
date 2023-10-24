@@ -204,7 +204,7 @@
   margin-bottom: 0;
 }
 
-.lend_btn>button {
+button.lendbtn {
   width: 60px;
   height: 40px;
   margin: 0;

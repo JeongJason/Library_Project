@@ -18,8 +18,8 @@ public class WishService {
     }
 
     // 신청 도서 조회
-    public WishDTO getWish(Long wishId){
-        return wishMapper.select(wishId);
+    public List<WishDTO> getWish(String userId){
+        return wishMapper.select(userId);
     }
     // 신청 도서 목록 조회
     public List<WishDTO> getList(){return wishMapper.selectAll();}

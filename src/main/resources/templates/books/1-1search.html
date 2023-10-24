@@ -225,7 +225,10 @@
                             <td th:text="*{author}"></td>
                             <td th:text="*{publisher}"></td>
                             <td class="lend_btn">
-                                <button>대여</button>
+                                <form th:action="@{/books/lend}" method="post" >
+                                    <input type="hidden" name="isbn" th:value="*{isbn}">
+                                <button class="lendbtn" type="submit" onclick="return showConfirmation(this);">대여</button>
+                                </form>
                             </td>
                             <td class="reserve_btn">
                                 <button>예약</button>
@@ -317,5 +320,10 @@
             }
         });
     });
+    function showConfirmation(button) {
+        var bookTitle = button.closest("tr").querySelector(".tdt").textContent; // Get the bookTitle
+        return confirm("'" + bookTitle + "'를 대여하시겠습니까?");
+    }
+
 </script>
 </html>

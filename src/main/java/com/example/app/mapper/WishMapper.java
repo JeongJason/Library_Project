@@ -12,7 +12,7 @@ public interface WishMapper {
     public void insert(WishDTO wishDTO);
 
     // 신청 내역 조회
-    public WishDTO select(Long wishId);
+    public List<WishDTO> select(String userId);
 
     // 신청 내역 목록 조회
     public List<WishDTO> selectAll();
