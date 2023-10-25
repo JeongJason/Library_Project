@@ -15,9 +15,14 @@
 <br/>
 
 ## ▶️ 개발 일정
-#### 2023-01-01 ~ 2023-01-05(05Day) : 요구사항분석 / 유스케이스 / 
-#### 2023-01-05 ~ 2023-01-15(10Day) : 스타일가이드 / 스토리보드 / ERD / ClassDiagram / Sequence Diagram
-#### 2023-01-16 ~ 2023-01-18(02Day) : 개발환경 구축(Github / Git / STS / Mysql / AWS ...)
+#### 2023-09-01 ~ 2023-09-05(05Day) : 요구사항분석 / 유스케이스 / 
+#### 2023-09-05 ~ 2023-09-15(10Day) : 스타일가이드 / 스토리보드 / ERD / ClassDiagram / Sequence Diagram
+#### 2023-09-16 ~ 2023-09-18(02Day) : 개발환경 구축(Github / Git / STS / Mysql / AWS ...)
+#### 2023-09-18 ~ 2023-09-25(08Day) : View 페이지 만들기
+#### 2023-09-26 ~ 2023-10-06(11Day) : Back-End 기능 구현
+#### 2023-10-07 ~ 2023-10-17(11Day) : View페이지 추가, Back-End기능 구현
+#### 2023-10-18 ~ 2023-10-24(07Day) : Front-End 수정 Back-End기능 구현 및 수정
+#### 2023-10-24 ~ 2023-10-25(02Day) : Linux AWS Jenkins 배포작업
 
 
 <br/>
@@ -34,7 +39,7 @@
 
 ## ▶️ 개발 환경(플랫폼)
 
-##### OS : WINDOW Server 2022 base
+##### OS : Amazon Linux release 2023
 ##### CPU SPEC : I7 Intel 
 ##### RAM SPEC : 16GB SAMSUNG DDR5
 ##### DISK SPEC : 512GB SSD 
@@ -43,7 +48,8 @@
 
 ## ▶️ IDE 종류
 
-##### IntelliJ IDEA 2023-06
+##### Front-End : Visual Studio Code 1.82.2
+##### Back-End : IntelliJ IDEA Community Edition 2023.2
 <br/>
 
 ## ▶️ Software 목록
@@ -53,19 +59,19 @@
 ##### Gradle version 8.2.1
 ##### Git 3.1.1
 ##### Mysql Server 8.0.33
+##### MyBatis
 ##### Mysql Workbench 8.0.33
 ##### DbWeaver 23.1.5
-##### ...
+##### AWS Linux
+##### Jenkins
+##### Visual Studio Code 1.82.2
+##### JSON
 <br/>
 
 ## ▶️ DevOps 
 
-##### Amazon Web Service EC2(Deploy Server)
-##### Amazon Web Service RDS(Remote Datebase Server)
 ##### Git & Github
-##### Docker(Server Image)
-##### Swagger(API Document)
-##### Adobe XD
+
 <br/>
 
 
