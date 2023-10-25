@@ -105,9 +105,9 @@ https://shields.io/
 
 |END POINT|METHOD|DESCRIPTION|
 |------|---|---|
-|/book/list|GET| 모든 도서 목록 표시|
-|/book/write|POST|신규 도서 등|
-|/book/read|GET|도서 1건 보기|
+|/books/list|GET| 모든 도서 목록 표시|
+|/books/write|POST|신규 도서 등|
+|/books/read|GET|도서 1건 보기|
 <br/>
 
 
