@@ -209,7 +209,7 @@ tr {
     line-height: 105px;
 }
 
-.dataTables_paginate a.paginate_button {
+a.paginate_button {
     cursor: pointer;
     display: inline-block;
     zoom: 1.2;

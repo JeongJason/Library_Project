@@ -127,3 +127,9 @@ option {
 .n_area:nth-child(3):hover {
   background-color: gray;
 }
+
+.n_area:nth-child(1)>a:hover,
+.n_area:nth-child(2)>a:hover,
+.n_area:nth-child(3)>a:hover {
+  color: white;
+}

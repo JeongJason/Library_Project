@@ -14,17 +14,14 @@ import java.util.Collection;
 import java.util.Map;
 
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
 public class PrincipalDetails implements UserDetails {
 
     private UserDTO dto;
 
-    public PrincipalDetails(UserDTO dto) {
-        this.dto = dto;
-    }
-
     //user에 대한 getter 메소드 추가
-    public void setDto(UserDTO dto) { this.dto = dto; }
+    public void setDto() { this.dto = dto; }
 
     public String getUserId() { return dto.getUserId(); }
 
@@ -52,10 +49,12 @@ public class PrincipalDetails implements UserDetails {
         collection.add(new GrantedAuthority(){
             @Override
             public String getAuthority() {
-                if(dto.getUserRole() == "ROLE_USER")
-                    return "ROLE_USER";
-                else
-                    return "ROLE_ADMIN";
+//                if(dto.getUserRole() == "ROLE_USER")
+//                    return "ROLE_USER";
+//                else
+//                    return "ROLE_ADMIN";
+
+                return dto.getUserRole();
             }
         } );
 

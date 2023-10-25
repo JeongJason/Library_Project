@@ -204,7 +204,7 @@
   margin-bottom: 0;
 }
 
-button.lendbtn {
+.lendbtn {
   width: 60px;
   height: 40px;
   margin: 0;
@@ -242,6 +242,7 @@ button.lendbtn {
   /* 커서 모양 설정 */
   transition: background-color 0.3s ease;
   /* 애니메이션 효과 설정 */
+
 }
 
 .lend_btn button:hover,

@@ -21,6 +21,8 @@
 
 .tnb_menu>a {
     color: black;
+    display: flex;
+    gap: 5px;
 }
 
 .header_bottom {

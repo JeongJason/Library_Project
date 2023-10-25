@@ -8,7 +8,7 @@
     </insert>
 
     <select id="select" resultType="wishDTO">
-        SELECT * FROM TBL_WISH WHERE WISH_ID = #{wishId};
+        SELECT * FROM TBL_WISH WHERE USER_ID = #{userId}
     </select>
 
     <select id="selectAll" resultType="wishDTO">
@@ -16,7 +16,7 @@
     </select>
 
     <delete id="delete">
-        DELETE FROM TBL_WISH WHERE WISH_ID = #{wishId};
+        DELETE FROM TBL_WISH WHERE WISH_ID = #{wishId}
     </delete>
 
     <update id="update">

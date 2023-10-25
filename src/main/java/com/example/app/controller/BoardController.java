@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -64,13 +65,15 @@ public class BoardController {
     }
     // 게시글 추가
     @GetMapping("/write")
-    public String showwrite(Model model){
+    public String showwrite(Model model, Principal principal){
         model.addAttribute(new BoardDTO());
         return "/boards/3-3write";
     }
 
     @PostMapping("/write")
-    public RedirectView write(BoardDTO boardDTO, RedirectAttributes redirectAttributes){
+    public RedirectView write(BoardDTO boardDTO, RedirectAttributes redirectAttributes,Principal principal){
+        String username = principal.getName();
+        boardDTO.setUserId(username);
         boardService.write(boardDTO);
         redirectAttributes.addFlashAttribute("anId", boardDTO.getAnId());
         return new RedirectView("/boards/notice");

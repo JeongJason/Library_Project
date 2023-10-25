@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -64,7 +65,9 @@ public class ReviewController {
     }
 
     @PostMapping("/write")
-    public RedirectView write(ReviewDTO reviewDTO, RedirectAttributes redirectAttributes){
+    public RedirectView write(ReviewDTO reviewDTO, RedirectAttributes redirectAttributes, Principal principal){
+        String username = principal.getName();
+        reviewDTO.setUserId(username);
         reviewService.write(reviewDTO);
         redirectAttributes.addFlashAttribute("revId", reviewDTO.getRevId());
         return new RedirectView("/reviews/3-2review");

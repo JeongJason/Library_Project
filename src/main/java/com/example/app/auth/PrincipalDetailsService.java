@@ -1,5 +1,6 @@
 package com.example.app.auth;
 
+import com.example.app.auth.loginHandler.CustomAuthenticationSuccessHandler;
 import com.example.app.domain.dto.UserDTO;
 import com.example.app.mapper.UserMapper;
 import com.example.app.service.UserService;
@@ -35,7 +36,6 @@ public class PrincipalDetailsService implements UserDetailsService {
         if( userDTO == null){
             throw new UsernameNotFoundException("Could not find user");
         }
-
         PrincipalDetails principal = new PrincipalDetails();
         principal.setDto(userDTO);
 

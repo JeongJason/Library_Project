@@ -15,4 +15,10 @@ public class LendDTO {
     private String lendStatus;
     private String lateDays;
 
+    private String bookTitle;
+    private String author;
+    private String publisher;
+    private int pubYear;
+
+
 }
