@@ -80,3 +80,8 @@
     color: white;
     font-weight: bold;
 }
+/*수정*/
+textarea#revContent {
+    width: 100%;
+    height: auto;
+}

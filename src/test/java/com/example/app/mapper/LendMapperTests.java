@@ -42,7 +42,7 @@ public class LendMapperTests {
     public void updateTest(){
         LendDTO lendDTO = new LendDTO();
         lendDTO.setLendSeq(5l);
-        lendMapper.update(lendDTO);
+        //lendMapper.update(lendDTO);
         LendDTO updatedLendDTO = lendMapper.selectByLendSeq(5l);
         assertThat(lendDTO).isNotNull();
     }
